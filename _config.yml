@@ -3,21 +3,21 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
+title: Shaw Blog
 subtitle:
 description:
-author: John Doe
+author: Shaw
 language:
 timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
+url: http://www.nicebp.com
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 
-# Directory
+# Directory 目录
 source_dir: source
 public_dir: public
 tag_dir: tags
