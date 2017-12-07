@@ -4,10 +4,10 @@
 
 # Site
 title: Shaw Blog
-subtitle:
-description:
+subtitle: 111111
+description: 55555
 author: Shaw
-language:
+language: 
 timezone:
 
 # URL
@@ -55,7 +55,7 @@ index_generator:
 # Category & Tag
 default_category: uncategorized
 category_map:
-tag_map:
+tag_map: 
 
 # Date / Time format
 ## Hexo uses Moment.js to parse and display date
@@ -72,7 +72,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+theme: icarus
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
