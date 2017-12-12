@@ -22,17 +22,24 @@ comments: false
     ['Webpack'],
     ['Less','Sass'],
     ['Git', 'SVN'],
-    ['React','APICloud'],
-    ['Bootstrap', 'SUI Mobile', 'Aui','Mui'],
-    ['WordPress', 'OpenCart'],
+    ['React','APICloud','微信小程序'],
+    ['Antd','Bootstrap', 'SUI Mobile', 'Aui','Mui'],
+    ['WordPress', 'Discuz','Hexo'],
     ['平面设计','UI设计']
   ],
   devTools: [
     ['Atom', 'Visual Studio Code', 'Brackets'],
     ['Chrome DevTools', 'FireBug'],
     ['SourceTree', 'TortoiseSVN'],
-    ['SwitchHosts'],
     ['Node','phpStudy', 'XAMPP'],
+  ],
+  softWare: [
+    'Adobe Animate',
+    'PhotoShop',
+    'Illustrator',
+    'skecth',
+    'Axure',
+    'MindManager'
   ]  
 }
 ```
