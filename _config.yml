@@ -9,6 +9,7 @@ description:
 author: Shaw
 language: 
 timezone:
+keywords: 前端博客,JavaScript,html5,css3,ES6,NodeJs,shaw blog
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
@@ -25,7 +26,7 @@ archive_dir: archives
 category_dir: categories
 code_dir: downloads/code
 i18n_dir: :lang
-skip_render:
+skip_render: item/** 
 
 # Writing
 new_post_name: :title.md # File name of new posts
@@ -79,6 +80,9 @@ category_generator:
 
 tag_generator:
   per_page: 20
+
+sitemap:
+path: sitemap.xml
 
 # Extensions
 ## Plugins: https://hexo.io/plugins/

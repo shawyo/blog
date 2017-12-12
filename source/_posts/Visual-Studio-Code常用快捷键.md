@@ -3,6 +3,7 @@ title: Visual Studio Code常用快捷键
 date: 2017-07-12 10:20:58
 tags:
 categories: "笔记"
+keywords: vs code,vs code快捷键,Visual Studio Code,hexo
 banner: /gallery/math.jpg
 ---
 Visual Studio Code 常用快捷键整理

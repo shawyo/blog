@@ -6,6 +6,7 @@ categories:
 tags: 
 - git
 banner: /gallery/math.jpg
+keywords: git,github,git常用,git命令,hexo
 ---
 git 常用命令
 <!-- more -->

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="authoring-tool" content="Adobe_Animate_CC">
+    <!-- <meta charset="UTF-8" name="apple-itunes-app" content="app-id=1255813040, affiliate-data=myAffiliateData"> -->
+    <!-- <meta http-equiv="Cache-Control" content="no-cache" /> -->
+    <!-- <meta http-equiv="Cache" content="no-cache" /> -->
+    <title>邀请好友</title>
+    <link rel="stylesheet" href="css/weui.min.css" />
+    <link rel="stylesheet" href="css/main.css" /> 
+    <script src="js/createjs.min.js"></script>
+    <script src="js/RedAnimate.js"></script>   
+    <style>
+        html{
+            background: none;
+            outline: none;
+        }
+        #animation_container {
+            position: absolute;
+            margin: auto;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            background: #000;
+        }
+
+        #bg {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background: #000;
+            z-index: 555;
+        }
+
+        .container {
+            display: none;
+        }
+
+        .loading-num {
+            text-align: center;
+            color: #f00;
+            font-size: 1rem;
+            position: absolute;
+            top:50%;
+            left: 50%;
+            margin-left: -50px;
+            margin-top: -50px;
+            width:100px;
+            height: 100px;
+            line-height: 100px;            
+            z-index: 999;
+        }
+
+    </style>    
+</head>
+
+<body ontouchstart onload="init();">
+   <div class="loading-num"><span>0</span>%</div>
+    <div id="bg"></div>
+    <div class="container">
+        <div class="page clearfix">
+            <div class="slogan">
+                <img src="images/Character.png" alt="" width="79%">
+            </div>
+            <div class="video" id="videoBox">
+                <div class="title">赢5把斗地主，领现金红包！
+                    <span class="close"></span>
+                </div>
+                <video width="300" height="auto" poster="images/poster.png" playsinline  webkit-playsinline="true" controls>
+          <source src="http://image.2010hh.com/mov/hhgame.mp4" type="video/mp4"> 您的浏览器不支持 video 标签。
+        </video>
+            </div>
+            <div class="desc">
+                <p>每赢五局，领现金！
+                </p>
+                <p>邀请好友现金翻倍！
+                </p>
+            </div>
+            <a href="https://itunes.apple.com/cn/app/id1255813040" class="downGame">
+        <img src="images/Button.png" alt="">
+      </a>
+            <div class="weui-footer ">
+                <p class="weui-footer__links">
+                    <a href="javascript:home();" class="weui-footer__link">火火棋牌</a>
+                </p>
+                <p class="weui-footer__text">Copyright © 2008-2017 2020hh.com</p>
+            </div>
+        </div>
+    </div>
+    <script>
+            var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
+    
+            function init() {
+                canvas = document.getElementById("canvas");
+                anim_container = document.getElementById("animation_container");
+                dom_overlay_container = document.getElementById("dom_overlay_container");
+                images = images || {};
+                ss = ss || {};
+                var loader = new createjs.LoadQueue(false);
+                loader.addEventListener("fileload", handleFileLoad);
+                loader.addEventListener("complete", handleComplete);
+                loader.loadManifest(lib.properties.manifest);
+            }
+    
+            function handleFileLoad(evt) {
+                if (evt.item.type == "image") {
+                    images[evt.item.id] = evt.result;
+                }
+            }
+    
+            function handleComplete(evt) {
+                //This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
+                var queue = evt.target;
+                var ssMetadata = lib.ssMetadata;
+                for (i = 0; i < ssMetadata.length; i++) {
+                    ss[ssMetadata[i].name] = new createjs.SpriteSheet({
+                        "images": [queue.getResult(ssMetadata[i].name)],
+                        "frames": ssMetadata[i].frames
+                    })
+                }
+                exportRoot = new lib.hongbaobaozha01();
+                stage = new createjs.Stage(canvas);
+                stage.addChild(exportRoot);
+                stage.enableMouseOver();
+                //Registers the "tick" event listener.
+                fnStartAnimation = function() {
+                    createjs.Ticker.setFPS(lib.properties.fps);
+                    createjs.Ticker.addEventListener("tick", stage);
+                }
+                //Code to support hidpi screens and responsive scaling.
+                function makeResponsive(isResp, respDim, isScale, scaleType) {
+                    var lastW, lastH, lastS = 1;
+                    window.addEventListener('resize', resizeCanvas);
+                    resizeCanvas();
+    
+                    function resizeCanvas() {
+                        var w = lib.properties.width,
+                            h = lib.properties.height;
+                        var iw = window.innerWidth,
+                            ih = window.innerHeight;
+                        var pRatio = window.devicePixelRatio || 1,
+                            xRatio = iw / w,
+                            yRatio = ih / h,
+                            sRatio = 1;
+                        if (isResp) {
+                            if ((respDim == 'width' && lastW == iw) || (respDim == 'height' && lastH == ih)) {
+                                sRatio = lastS;
+                            } else if (!isScale) {
+                                if (iw < w || ih < h)
+                                    sRatio = Math.min(xRatio, yRatio);
+                            } else if (scaleType == 1) {
+                                sRatio = Math.min(xRatio, yRatio);
+                            } else if (scaleType == 2) {
+                                sRatio = Math.max(xRatio, yRatio);
+                            }
+                        }
+                        canvas.width = w * pRatio * sRatio;
+                        canvas.height = h * pRatio * sRatio;
+                        canvas.style.width = dom_overlay_container.style.width = anim_container.style.width = w * sRatio + 'px';
+                        canvas.style.height = anim_container.style.height = dom_overlay_container.style.height = h * sRatio + 'px';
+                        stage.scaleX = pRatio * sRatio;
+                        stage.scaleY = pRatio * sRatio;
+                        lastW = iw;
+                        lastH = ih;
+                        lastS = sRatio;
+                    }
+                }
+                makeResponsive(true, 'both', true, 2);
+                fnStartAnimation();
+            }
+        </script>
+
+    
+    <div id="animation_container" style="background-color:rgba(69, 69, 69, 0.00); width:414px; height:736px">
+        <canvas id="canvas" width="414" height="736" style="position: absolute; display: block; background-color:rgba(69, 69, 69, 0.00);z-index:999"></canvas>
+        <div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; width:414px; height:736px; position: absolute; left: 0px; top: 0px; display: block;">
+        </div>
+    </div>
+    <script src="js/zepto.min.js"></script>
+    <script src="js/imagesLoader.min.js"></script>
+        
+    <script type="text/javascript">
+        
+        var loader = new ImagesLoader();
+        loader.loadImages([
+            'background.jpg',
+            'RedAnimate_atlas_.png',
+            'Button.png',
+            'Character.png',
+            'poster.png'
+        ], 'images/');
+
+
+        loader.start(Date());
+        var startTime = new Date();
+
+        loader.complete(function() {
+            $('html').css('background','#f72f3c')
+            $('.loading-num').hide();
+            $('.container').show();
+            var time = new Date() - startTime;
+            // console.log("加载所用时间：" + time);
+        });
+
+        loader.process(function() {
+            // console.log(this.processNum)
+            $('.loading-num span').html(this.processNum);
+        });
+        $(function() {
+            var download = {
+                ios: 'https://itunes.apple.com/cn/app/id1255813040',
+                android: 'http://download.2020hh.com/Download/HHGame.apk',
+                pc: 'http://download.2020hh.com/Download/HHGame.exe'
+            }
+            //获取浏览器user-Agent
+            var ua = window.navigator.userAgent.toLowerCase();
+            if (ua.match(/(iphone|ipod|ipad|ios);?/i)) {
+                $(".downGame").attr("href", download.ios);
+                //如果是安卓终端
+            } else if (ua.match(/(windows|windowswechat);?/i)){
+                $(".downGame").attr("href", download.pc);
+            }
+            else {
+                $(".downGame").attr("href", download.android);
+            }
+
+            //消除移动端点击延迟
+            //    FastClick.attach(document.body);  
+            if ($(window).width() >= 320) {
+                var videoW = $(window).width() - 60;
+                $('video').attr('width', videoW);
+                $('#videoBox').css({
+                    "width": videoW,
+                    "margin-left": -videoW / 2
+                });
+            }
+            $('#videoBox .title span').on('click', function() {
+                $('#videoBox').addClass('bounceOut');
+                setTimeout(function() {
+                    $('#videoBox').remove();
+                }, 800)
+            })
+        })
+
+    </script>
+
+</body>
+</html>
