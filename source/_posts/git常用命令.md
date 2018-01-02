@@ -16,7 +16,7 @@ $ git init
 ```
 ### 克隆项目
 ```js
-$ git clone [URL]
+$ git clone URL
 ```
 ### 查看状态
 ```js
@@ -32,7 +32,7 @@ $ git commit -m "描述"
 ```
 ### 添加远程地址
 ```js
-$ git remote add origin [URL]
+$ git remote add origin URL
 ```
 ### 提交到远程仓库
 ```js
@@ -48,9 +48,25 @@ $  git branch
 ```
 ### 创建分支
 ```js
-$ git branch [name]
+$ git branch branch name
 ```
 ### 切换到分支
 ```js
-$ git checkout [branch name]
+$ git checkout branch name
+```
+### 新建本地分支
+```js
+$ git checkout -b branch
+```
+### 将新建的分支`push`到远程服务器
+```js
+$ git push origin branch:branch
+```
+远程分支与本地分支同名（当然可以随意起名）
+### 删除远程分支
+```js
+# 直接push过去一个空分支到远程，相当于删除远程分支
+$ git push origin :branch
+# 直接删除
+$ git push origin --delete branch
 ```
