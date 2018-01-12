@@ -1,6 +1,6 @@
 ---
 title: git常用命令
-date: 2017-07-08 18:34:14
+date: 2017-02-08 18:34:14
 categories:
 - 笔记
 tags: 
@@ -10,6 +10,15 @@ keywords: git,github,git常用,git命令,hexo
 ---
 git 常用命令
 <!-- more -->
+### 创建 SSH key
+```js
+$ ssh-keygen -t rsa -C "youremail@example.com"
+```
+### 配置全局 name 和 email 
+```js
+$ git config --global user.name "yourname" 
+$ git config --global user.email "yourname@example.com" 
+```
 ### git仓库初始化
 ```js
 $ git init
