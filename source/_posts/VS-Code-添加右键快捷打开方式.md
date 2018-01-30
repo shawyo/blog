@@ -30,5 +30,6 @@ Windows软件编辑器及阅读软件，安装后没有出现在右键快捷菜�
 ##### 2. 在 `Open with VSCode` 文件下新建 `Command` 项 设置值为软件安装路径 如：`D:\sort\Microsoft VS Code\Code.exe %1`
 ![新建 Command 设置值](https://s1.ax2x.com/2018/01/29/JACWG.png)
 ##### 3.关闭注册表即刻生效
-![右键生效](https://s1.ax2x.com/2018/01/29/JAEcn.png)
+![右键生效](https://s1.ax2x.com/2018/01/29/JAPbp.png)
+
 
