@@ -4,7 +4,7 @@ date: 2017-09-29 14:35:35
 tags:
 categories: "笔记"
 keywords: vs code快捷键,Visual Studio Code,sublime Text3,Sublime添加到右键菜单,将程序添加到右键菜单
-banner: /gallery/vscode.jpg
+banner: http://pa1po10mf.bkt.clouddn.com/blog/banner/vscode.jpg
 ---
 Windows软件编辑器及阅读软件，安装后没有出现在右键快捷菜单中使用极为不便，以Visual Studio Code为例添加右键快捷打开方式，快速打开文件及文件夹
 <!-- more -->

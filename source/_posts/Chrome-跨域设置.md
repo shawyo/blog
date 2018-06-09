@@ -4,7 +4,7 @@ date: 2017-10-09 17:35:35
 tags:
 categories: "笔记"
 keywords: 跨域,Chrome跨域设置
-banner: https://s1.ax2x.com/2018/01/30/ZjPfJ.jpg
+banner: http://pa1po10mf.bkt.clouddn.com/blog/banner/ZjPfJ.jpg?imageView2/1/w/690/h/295/q/75
 ---
 利用 `--disable-web-security` 参数，这个参数可以降低Chrome的安全性，禁止同源策略，方便本地开发调试
 <!-- more -->
