@@ -21,7 +21,7 @@ function addClickHandler(target,window){
 }
 function addMapOverlay(){
     var markers = [
-        {content:"烟台数动教育科技有限公司，成立于2015年，经教育机构批准成立的专业性培训机构，从事电子商务人才的专业培训及互联网+项目研发工作。从成立之初就得到了政府的大力支持,积极响应国家号召，为成立山东地区蓝色智谷互联网发展圈作出贡献。",title:"烟台数动教育科技有限公司",imageOffset: {width:-46,height:-21},position:{lat:37.455542,lng:121.490183}}
+        {content:"烟台数动网络科技有限公司，成立于2015年，经教育机构批准成立的专业性培训机构，从事电子商务人才的专业培训及互联网+项目研发工作。从成立之初就得到了政府的大力支持,积极响应国家号召，为成立山东地区蓝色智谷互联网发展圈作出贡献。",title:"烟台数动网络科技有限公司",imageOffset: {width:-46,height:-21},position:{lat:37.455542,lng:121.490183}}
     ];
     for(var index = 0; index < markers.length; index++ ){
         var point = new BMap.Point(markers[index].position.lng,markers[index].position.lat);
