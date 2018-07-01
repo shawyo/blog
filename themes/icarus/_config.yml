@@ -21,8 +21,9 @@ customize:
         author_title: Web Developer & Designer
         location: HangZhou, China
         follow: https://github.com/shawyo/
-    # highlight: monokai
-    highlight: github
+    highlight: monokai
+    # highlight: dark
+    # highlight: github
     sidebar: right # sidebar position, options: left, right or leave it empty
     thumbnail: true # enable posts thumbnail, options: true, false
     favicon: # path to favicon
