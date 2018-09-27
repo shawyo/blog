@@ -80,7 +80,7 @@ comment:
 share: bdshare # options: jiathis, bdshare, addtoany, default
 
 # language
-# language: zh-CN
+language: zh-CN
 
 # Plugins
 plugins:

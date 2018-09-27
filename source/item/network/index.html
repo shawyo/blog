@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <div style="font-size:20px;">
+        当前的网络类型：
+        <span id="box"></span>
+    </div>
+    <script>
+        var box = document.getElementById('box');
+        box.innerHTML = getNetworkType();
+
+        function getNetworkType() {
+            var ua = navigator.userAgent;
+            var networkStr = ua.match(/NetType\/\w+/) ? ua.match(/NetType\/\w+/)[0] : 'NetType/other';
+            networkStr = networkStr.toLowerCase().replace('nettype/', '');
+            var networkType;
+            switch (networkStr) {
+                case 'wifi':
+                    networkType = 'wifi';
+                    break;
+                case '4g':
+                    networkType = '4g';
+                    break;
+                case '3g':
+                    networkType = '3g';
+                    break;
+                case '3gnet':
+                    networkType = '3g';
+                    break;
+                case '2g':
+                    networkType = '2g';
+                    break;
+                default:
+                    networkType = 'other';
+            }
+            return networkType;
+        }
+    </script>
+</body>
+
+</html>
