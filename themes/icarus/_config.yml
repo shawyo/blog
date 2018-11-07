@@ -21,8 +21,8 @@ customize:
         author_title: Web Developer & Designer
         location: HangZhou, China
         follow: https://github.com/shawyo/
-    # highlight: monokai
-    highlight: railscasts
+    highlight: atelier-seaside-dark
+    # highlight: railscasts
     # highlight: github
     sidebar: right # sidebar position, options: left, right or leave it empty
     thumbnail: true # enable posts thumbnail, options: true, false

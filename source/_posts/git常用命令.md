@@ -88,13 +88,19 @@ $ git push origin :branch
 $ git push origin --delete branch
 ```
 ### 修改远程仓库地址
-1.通过命令直接修改
+1. 通过命令直接修改
 ```
 $ git remote set-url origin https://github.com/YOUNAME/ITEMNAME.git
 ```
-2.通过命令先删除后添加
+2. 通过命令先删除后添加
 ```git
 $ git remote -v
 $ git remote rm origin 
 $ git remote add origin https://github.com/YOUNAME/ITEMNAME.git
+```
+### 当本地分支没有和远程分支没有建立联系的时候
+1. 使用 `git branch -vv` 可以查看本地分支和远程分支的关联关系
+
+```git
+$ git branch --set-upstream-to=origin/远程分支的名字  本地分支的名字
 ```
