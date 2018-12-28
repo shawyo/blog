@@ -3,7 +3,7 @@ title: Markdown简要使用说明
 date: 2017-07-05 11:47:19
 tags: [markdown]
 keywords: markdown,markdown语法,markdown常用,hexo
-banner: http://pa1po10mf.bkt.clouddn.com/blog/banner/markdown.jpg
+banner: http://image.nicebp.com/blog/banner/markdown.jpg
 ---
 Markdown 是一种方便记忆、书写的纯文本标记语言，用户可以使用这些标记符号以最小的输入代价生成极富表现力的文档：譬如您正在阅读的这份文档。它使用简单的符号标记不同的标题，分割不同的段落，**粗体** 或者 *斜体* 某些文字，更棒的是，它还可以
 <!-- more -->

@@ -3,7 +3,7 @@ title: ESLint&VSCode自动化配置
 date: 2018-02-22 11:47:23
 categories: '笔记'
 keywords: eslint,vscode eslint,eslint自动校验
-banner: http://pa1po10mf.bkt.clouddn.com/blog/banner/TB1xJN9QXXXXXbXXpXXXXXXXXXX-900-500.jpg?imageView2/1/w/690/h/295/q/75
+banner: http://image.nicebp.com/blog/banner/TB1xJN9QXXXXXbXXpXXXXXXXXXX-900-500.jpg?imageView2/1/w/690/h/295/q/75
 ---
 
 eslint 配合 vscode 一劳永逸的处理办法

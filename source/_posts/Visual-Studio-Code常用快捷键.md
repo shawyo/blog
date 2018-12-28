@@ -4,7 +4,7 @@ date: 2017-07-12 10:20:58
 tags:
 categories: "笔记"
 keywords: vs code,vs code快捷键,Visual Studio Code,hexo
-banner: http://pa1po10mf.bkt.clouddn.com/blog/banner/vscode.jpg?imageView2/1/w/690/h/295/q/75
+banner: http://image.nicebp.com/blog/banner/vscode.jpg?imageView2/1/w/690/h/295/q/75
 ---
 Visual Studio Code 常用快捷键整理
 <!-- more -->

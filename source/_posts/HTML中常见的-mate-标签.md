@@ -4,7 +4,7 @@ date: 2017-03-09 11:53:48
 tags: html5+css3
 categories: 笔记
 keywords: mate标签,常见的mate,html mate,
-banner: http://pa1po10mf.bkt.clouddn.com/blog/banner/TB1xJN9QXXXXXbXXpXXXXXXXXXX-900-500.jpg?imageView2/1/w/690/h/295/q/75
+banner: http://image.nicebp.com/blog/banner/TB1xJN9QXXXXXbXXpXXXXXXXXXX-900-500.jpg?imageView2/1/w/690/h/295/q/75
 ---
 HTML中常见不常见的 `<mate>`标签
 <!-- more -->

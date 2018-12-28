@@ -4,7 +4,7 @@ date: 2017-04-27 17:10:41
 tags: html5+css3
 categories: 笔记
 keywords: Html5判断竖屏横屏,js判断竖屏横屏,前端判断竖屏横屏,竖屏横屏判断
-banner: http://pa1po10mf.bkt.clouddn.com/blog/banner/math.jpg
+banner: http://image.nicebp.com/blog/banner/math.jpg
 ---
 web前端在移动手持设备中判断横竖屏的几种方式
 <!-- more -->

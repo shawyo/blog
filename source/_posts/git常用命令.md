@@ -5,7 +5,7 @@ categories:
 - 笔记
 tags: 
 - git
-banner: http://pa1po10mf.bkt.clouddn.com/blog/banner/git.jpg?imageView2/1/w/690/h/295/q/75
+banner: http://image.nicebp.com/blog/banner/git.jpg?imageView2/1/w/690/h/295/q/75
 keywords: git,github,git常用,git命令,hexo
 ---
 git 常用命令

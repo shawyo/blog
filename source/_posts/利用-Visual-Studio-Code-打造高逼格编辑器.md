@@ -3,7 +3,7 @@ title: 利用 Visual Studio Code 打造高逼格编辑器
 date: 2017-06-09 15:16:19
 tags:
 keywords: vs code,vscode插件,vscode主题,Visual Studio Code,hexo
-banner: http://pa1po10mf.bkt.clouddn.com/blog/banner/vscode.jpg?imageView2/1/w/690/h/295/q/75
+banner: http://image.nicebp.com/blog/banner/vscode.jpg?imageView2/1/w/690/h/295/q/75
 ---
 推荐几款vs code不错的插件主题
 <!-- more -->
