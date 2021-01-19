@@ -1,37 +1,36 @@
 ---
 title: About
-date: 2017-12-06 14:53:39
+date: 2019-12-06 14:53:39
 comments: false
 ---
 
 ```js
 {
   name: 'Shaw'
-  age: 27,
+  age: 29,
   gender: '男',
   profession: 'Web Developer & Designer',
-  experience: '4年',
+  experience: '6年',
   address: '浙江省杭州市',
   education: '大专',
   github: 'https://github.com/shawyo',
-  blog: 'http://www.nicebp.com',
+  blog: 'http://seanyo.gitee.io/blog/',
   email: 'yaoxiaosir@qq.com',
-  description: '致力于网站建设与前端用户体验设计',
   skills: [
-    ['Html5', 'Javascript', 'CSS3', 'ES6', 'NodeJS'],
-    ['Webpack'],
+    ['Html5', 'Javascript', 'CSS3', 'ES6+', 'NodeJS', 'TypeScript'],
+    ['Webpack', 'npm'],
     ['Less','Sass'],
     ['Git', 'SVN'],
-    ['Vue', 'Vue Router', 'Vuex', 'APICloud', 'jQuery', 'Zepto', '微信小程序', '微信公众号开发'],
-    ['Element-ui', 'Vant', 'Bootstrap', 'Weui', 'SUI Mobile', 'Aui', 'Mui'],
-    ['WordPress', 'Discuz', 'Hexo'],
-    ['平面设计','UI设计']
+    ['Vue2.x', 'Vue3.x', 'Vue Router', 'Vuex', 'Echarts', 'AMap JS', 'BMap JS', 'APICloud', 'jQuery', '微信小程序', '微信公众号开发'],
+    ['Ant Design', 'iview', 'Element-ui', 'Vant', 'Bootstrap', 'Weui'],
+    ['WordPress', 'Discuz', 'Hexo', 'vuepress'],
+    ['平面设计', 'UI设计']
   ],
   devTools: [
     ['Visual Studio Code', 'Atom', 'Brackets'],
     ['Chrome DevTools', 'FireBug'],
-    ['TortoiseSVN'],
-    ['Node','phpStudy', 'XAMPP'],
+    ['TortoiseSVN', 'Git'],
+    ['NodeJs', 'phpStudy', 'XAMPP'],
   ],
   softWare: [
     'Adobe Animate',
