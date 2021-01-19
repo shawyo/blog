@@ -21,7 +21,7 @@ comments: false
     ['Webpack', 'npm'],
     ['Less','Sass'],
     ['Git', 'SVN'],
-    ['Vue2.x', 'Vue3.x', 'Vue Router', 'Vuex', 'Echarts', 'AMap JS', 'BMap JS', 'APICloud', 'jQuery', '微信小程序', '微信公众号开发'],
+    ['Vue2.x', 'Vue3.x', 'Vue Router', 'Vuex', 'Echarts', 'MockJs', 'AMap JS', 'BMap JS', 'APICloud', 'jQuery', '微信小程序', '微信公众号开发'],
     ['Ant Design', 'iview', 'Element-ui', 'Vant', 'Bootstrap', 'Weui'],
     ['WordPress', 'Discuz', 'Hexo', 'vuepress'],
     ['平面设计', 'UI设计']
