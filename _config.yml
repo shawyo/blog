@@ -4,10 +4,10 @@
 
 # Site
 title: Shaw Blog
-subtitle: 
-description: 
+subtitle:
+description:
 author: Shaw
-language: 
+language:
 timezone:
 keywords: 前端博客,JavaScript,html5,css3,ES6,NodeJs,shaw blog
 
@@ -26,7 +26,7 @@ archive_dir: archives
 category_dir: categories
 code_dir: downloads/code
 i18n_dir: :lang
-skip_render: item/** 
+skip_render: item/**
 
 # Writing
 new_post_name: :title.md # File name of new posts
@@ -43,7 +43,7 @@ highlight:
   line_number: false
   auto_detect: false
   tab_replace:
-  
+
 # Home page setting
 # path: Root path for your blogs index page. (default = '')
 # per_page: Posts displayed per page. (0 = disable pagination)
@@ -52,11 +52,11 @@ index_generator:
   # path: ''
   per_page: 6
   # order_by: -date
-  
+
 # Category & Tag
 default_category: uncategorized
 category_map:
-tag_map: 
+tag_map:
 
 # Date / Time format
 ## Hexo uses Moment.js to parse and display date
@@ -89,10 +89,10 @@ path: sitemap.xml
 ## Themes: https://hexo.io/themes/
 theme: icarus
 
-
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: git@gitee.com:seanyo/blog.git
+  repo: https://gitee.com/seanyo/blog.git
   branch: master
+  message: docs update
