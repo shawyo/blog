@@ -94,5 +94,5 @@ theme: icarus
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: git@git.coding.net:ShawCassidy/shaw.coding.me.git
+  repo: git@gitee.com:seanyo/blog.git
   branch: master
