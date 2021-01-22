@@ -11,7 +11,6 @@ TypeScript 支持与 JavaScript 几乎相同的数据类型，此外还提供了
 
 <!-- more -->
 
-
 ## 布尔值 `boolean`
 
 ---
@@ -74,8 +73,8 @@ let arr1: number[] = [1, 2, 3];
 第二种方式是使用数组泛型，`Array<元素类型>`：
 
 ```ts
-let arr2: Array[number] = [1, 2, 3];
-let arr3: Array[string] = ["1", "2", "3"];
+let arr2: Array<number> = [1, 2, 3];
+let arr3: Array<string> = ["1", "2", "3"];
 ```
 
 ## 元组 `Tuple`
