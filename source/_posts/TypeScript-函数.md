@@ -1,6 +1,6 @@
 ---
 title: TypeScript 函数
-date: 2021-01-23 16:14:16
+date: 2019-01-23 16:14:16
 tags: TypeScript
 categories: TypeScript
 keywords: ts,typescript,TypeScript
