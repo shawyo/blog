@@ -1,6 +1,6 @@
 ---
 title: TypeScript 其他
-date: 2021-01-24 15:15:53
+date: 2019-01-24 15:15:53
 tags: TypeScript
 categories: TypeScript
 keywords: ts,typescript,TypeScript
