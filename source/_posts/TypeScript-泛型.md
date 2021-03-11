@@ -1,6 +1,6 @@
 ---
 title: TypeScript 泛型
-date: 2021-01-29 11:07:22
+date: 2019-01-29 11:07:22
 tags: TypeScript
 categories: TypeScript
 keywords: ts,typescript,TypeScript
