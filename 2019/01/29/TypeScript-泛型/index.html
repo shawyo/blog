@@ -1,74 +1,58 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
     
     <title>TypeScript 泛型 | Shaw Blog</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
         <meta name="keywords" content="ts,typescript,TypeScript,前端博客,JavaScript,html5,css3,ES6,NodeJs,shaw blog">
         
     <meta content="yes" name="apple-mobile-web-app-capable">
     <meta name="description" content="指在定义函数、接口或类的时候，不预先指定具体的类型，而在使用的时候再指定具体类型的一种特性。">
+<meta name="keywords" content="ts,typescript,TypeScript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="TypeScript 泛型">
-<meta property="og:url" content="http://nicebp.com/2019/01/29/TypeScript-%E6%B3%9B%E5%9E%8B/index.html">
+<meta property="og:url" content="http://nicebp.com/2019/01/29/TypeScript-泛型/index.html">
 <meta property="og:site_name" content="Shaw Blog">
 <meta property="og:description" content="指在定义函数、接口或类的时候，不预先指定具体的类型，而在使用的时候再指定具体类型的一种特性。">
-<meta property="og:locale">
+<meta property="og:locale" content="default">
 <meta property="og:image" content="https://www.tslang.cn/assets/images/foreground_bluprint.svg">
-<meta property="article:published_time" content="2019-01-29T03:07:22.000Z">
-<meta property="article:modified_time" content="2022-01-12T07:29:47.984Z">
-<meta property="article:author" content="Shaw">
-<meta property="article:tag" content="TypeScript">
+<meta property="og:updated_time" content="2022-01-12T07:29:47.984Z">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="TypeScript 泛型">
+<meta name="twitter:description" content="指在定义函数、接口或类的时候，不预先指定具体的类型，而在使用的时候再指定具体类型的一种特性。">
 <meta name="twitter:image" content="https://www.tslang.cn/assets/images/foreground_bluprint.svg">
     
 
     
-        <link rel="alternate" href="/" title="Shaw Blog" type="application/atom+xml" />
+        <link rel="alternate" href="/" title="Shaw Blog" type="application/atom+xml">
     
 
     
 
-    
-<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/open-sans/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
 
-    
-<link rel="stylesheet" href="/libs/open-sans/styles.css">
+    <!-- <link rel="stylesheet" href="/css/style.css"> -->
+    <link rel="stylesheet" href="/css/style_dark.css">
 
-    
-<link rel="stylesheet" href="/libs/source-code-pro/styles.css">
-
-
-    <!-- 
-<link rel="stylesheet" href="/css/style.css">
- -->
-    
-<link rel="stylesheet" href="/css/style_dark.css">
-
-
-    
-<script src="/libs/jquery/2.1.3/jquery.min.js"></script>
-
+    <script src="/libs/jquery/2.1.3/jquery.min.js"></script>
     
     
-        
-<link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
-
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
     
     
-        
-<link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
-
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
     
     
     
     
 
 
-<meta name="generator" content="Hexo 5.3.0"></head>
-
+</head>
+</html>
 <body>
     <div id="container">
         <header id="header">
@@ -105,7 +89,7 @@
             <div id="search-form-wrap">
 
     <form class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="Buscar" />
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
         <button type="submit" class="search-form-submit"></button>
     </form>
     <div class="ins-search">
@@ -124,10 +108,10 @@
 (function (window) {
     var INSIGHT_CONFIG = {
         TRANSLATION: {
-            POSTS: 'Entradas',
+            POSTS: 'Posts',
             PAGES: 'Pages',
-            CATEGORIES: 'Categorias',
-            TAGS: 'Etiquetas',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
             UNTITLED: '(Untitled)',
         },
         ROOT_URL: '/',
@@ -136,9 +120,7 @@
     window.INSIGHT_CONFIG = INSIGHT_CONFIG;
 })(window);
 </script>
-
 <script src="/js/insight.js"></script>
-
 
 </div>
         </div>
@@ -160,7 +142,7 @@
                 <td>
                     
     <div class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="Buscar" />
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
     </div>
 
                 </td>
@@ -180,16 +162,16 @@
             <h2 id="name">ShawYo</h2>
             <h3 id="title">Web Developer &amp; Designer</h3>
             <span id="location"><i class="fa fa-map-marker"></i>HangZhou, China</span>
-            <a id="follow" target="_blank" href="https://github.com/shawyo/">SEGUIR</a>
+            <a id="follow" target="_blank" href="https://github.com/shawyo/">FOLLOW</a>
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
                 18
-                <span>Entradas</span>
+                <span>posts</span>
             </div>
             <div class="article-info-block">
                 6
-                <span>Etiquetas</span>
+                <span>tags</span>
             </div>
         </div>
         <!-- 
@@ -261,7 +243,7 @@
                         
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/2019/01/29/TypeScript-%E6%B3%9B%E5%9E%8B/">
+        <a href="/2019/01/29/TypeScript-泛型/">
             <time datetime="2019-01-29T03:07:22.000Z" itemprop="datePublished">2019-01-29</time>
         </a>
     </div>
@@ -276,7 +258,7 @@
                         
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link-link" href="/tags/TypeScript/" rel="tag">TypeScript</a>
+        <a class="tag-link" href="/tags/TypeScript/">TypeScript</a>
     </div>
 
                     </div>
@@ -291,22 +273,23 @@
 <a id="more"></a>
 <h1 id="泛型-Generics"><a href="#泛型-Generics" class="headerlink" title="泛型 Generics"></a>泛型 <code>Generics</code></h1><h2 id="引入"><a href="#引入" class="headerlink" title="引入"></a>引入</h2><hr>
 <p>下面创建一个函数, 实现功能: 根据指定的数量 count 和数据 value , 创建一个包含 count 个 value 的数组 不用泛型的话，这个函数可能是下面这样</p>
-<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createArray</span>(<span class="params">value: <span class="built_in">any</span>, count: <span class="built_in">number</span></span>): <span class="title">any</span>[] </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> arr: <span class="built_in">any</span>[] = [];</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt;= count; i++) &#123;</span><br><span class="line">    arr.push(value);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> arr;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(createArray(<span class="string">&quot;aa&quot;</span>, <span class="number">2</span>));</span><br><span class="line"><span class="built_in">console</span>.log(createArray(<span class="number">2</span>, <span class="number">2</span>));</span><br></pre></td></tr></table></figure>
+<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createArray</span>(<span class="params">value: <span class="built_in">any</span>, count: <span class="built_in">number</span></span>): <span class="title">any</span>[] </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> arr: <span class="built_in">any</span>[] = [];</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt;= count; i++) &#123;</span><br><span class="line">    arr.push(value);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> arr;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(createArray(<span class="string">"aa"</span>, <span class="number">2</span>));</span><br><span class="line"><span class="built_in">console</span>.log(createArray(<span class="number">2</span>, <span class="number">2</span>));</span><br></pre></td></tr></table></figure>
 <h2 id="使用泛型"><a href="#使用泛型" class="headerlink" title="使用泛型"></a>使用泛型</h2><hr>
 <p>不一定非得用 <code>T</code></p>
-<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createArray2</span>&lt;<span class="title">T</span>&gt;(<span class="params">value: T, count: <span class="built_in">number</span></span>): <span class="title">T</span>[] </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> arr: <span class="built_in">Array</span>&lt;T&gt; = [];</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt;= count; i++) &#123;</span><br><span class="line">    arr.push(value);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> arr;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(createArray(<span class="string">&quot;aa&quot;</span>, <span class="number">2</span>));</span><br><span class="line"><span class="built_in">console</span>.log(createArray(<span class="number">2</span>, <span class="number">2</span>));</span><br></pre></td></tr></table></figure>
+<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createArray2</span>&lt;<span class="title">T</span>&gt;(<span class="params">value: T, count: <span class="built_in">number</span></span>): <span class="title">T</span>[] </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> arr: <span class="built_in">Array</span>&lt;T&gt; = [];</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt;= count; i++) &#123;</span><br><span class="line">    arr.push(value);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> arr;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(createArray(<span class="string">"aa"</span>, <span class="number">2</span>));</span><br><span class="line"><span class="built_in">console</span>.log(createArray(<span class="number">2</span>, <span class="number">2</span>));</span><br></pre></td></tr></table></figure>
 <h2 id="多个泛型参数的函数"><a href="#多个泛型参数的函数" class="headerlink" title="多个泛型参数的函数"></a>多个泛型参数的函数</h2><hr>
 <p>一个函数可以定义多个泛型参数</p>
-<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">swap</span>&lt;<span class="title">A</span>, <span class="title">B</span>&gt;(<span class="params">a: A, b: B</span>): [<span class="title">A</span>, <span class="title">B</span>] </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> [a, b];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> res = swap&lt;<span class="built_in">string</span>, <span class="built_in">number</span>&gt;(<span class="string">&quot;tom&quot;</span>, <span class="number">12</span>);</span><br><span class="line"><span class="built_in">console</span>.log(res);</span><br></pre></td></tr></table></figure>
+<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">swap</span>&lt;<span class="title">A</span>, <span class="title">B</span>&gt;(<span class="params">a: A, b: B</span>): [<span class="title">A</span>, <span class="title">B</span>] </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> [a, b];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> res = swap&lt;<span class="built_in">string</span>, <span class="built_in">number</span>&gt;(<span class="string">"tom"</span>, <span class="number">12</span>);</span><br><span class="line"><span class="built_in">console</span>.log(res);</span><br></pre></td></tr></table></figure>
 <h2 id="泛型接口"><a href="#泛型接口" class="headerlink" title="泛型接口"></a>泛型接口</h2><hr>
 <p>在定义接口时, 为接口中的属性或方法定义泛型类型<br>在使用接口时, 再指定具体的泛型类型</p>
-<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="keyword">interface</span> IbaseCRUD&lt;T&gt; &#123;</span><br><span class="line">  <span class="attr">data</span>: T[];</span><br><span class="line">  add: <span class="function">(<span class="params">t: T</span>) =&gt;</span> <span class="built_in">void</span>;</span><br><span class="line">  getById: <span class="function">(<span class="params">id: <span class="built_in">number</span></span>) =&gt;</span> T;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">User</span> </span>&#123;</span><br><span class="line">  id?: <span class="built_in">number</span>;</span><br><span class="line">  name: <span class="built_in">string</span>;</span><br><span class="line">  age: <span class="built_in">number</span>;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="title">constructor</span>(<span class="params">name: <span class="built_in">string</span>, age: <span class="built_in">number</span></span>)</span> &#123;</span><br><span class="line">    <span class="built_in">this</span>.name = name;</span><br><span class="line">    <span class="built_in">this</span>.age = age;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">UserCRUD</span> <span class="title">implements</span> <span class="title">IbaseCRUD</span>&lt;<span class="title">User</span>&gt; </span>&#123;</span><br><span class="line">  <span class="attr">data</span>: User[] = [];</span><br><span class="line"></span><br><span class="line">  add(user: User): <span class="built_in">void</span> &#123;</span><br><span class="line">    user = &#123; ...User, <span class="attr">id</span>: <span class="built_in">Date</span>.now() &#125;;</span><br><span class="line">    <span class="built_in">this</span>.data.push(user);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;save user&quot;</span>, user.id);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  getById(id: <span class="built_in">number</span>): User &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">this</span>.data.find(<span class="function">(<span class="params">i</span>) =&gt;</span> i.id === id);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> userCRUD = <span class="keyword">new</span> UserCRUD();</span><br><span class="line">userCRUD.add(<span class="keyword">new</span> User(<span class="string">&quot;tom&quot;</span>, <span class="number">12</span>));</span><br><span class="line">userCRUD.add(<span class="keyword">new</span> User(<span class="string">&quot;tom2&quot;</span>, <span class="number">13</span>));</span><br><span class="line"><span class="built_in">console</span>.log(userCRUD.data);</span><br></pre></td></tr></table></figure>
+<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="keyword">interface</span> IbaseCRUD&lt;T&gt; &#123;</span><br><span class="line">  data: T[];</span><br><span class="line">  add: <span class="function">(<span class="params">t: T</span>) =&gt;</span> <span class="built_in">void</span>;</span><br><span class="line">  getById: <span class="function">(<span class="params">id: <span class="built_in">number</span></span>) =&gt;</span> T;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> User &#123;</span><br><span class="line">  id?: <span class="built_in">number</span>;</span><br><span class="line">  name: <span class="built_in">string</span>;</span><br><span class="line">  age: <span class="built_in">number</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">constructor</span>(<span class="params">name: <span class="built_in">string</span>, age: <span class="built_in">number</span></span>) &#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">    <span class="keyword">this</span>.age = age;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> UserCRUD <span class="keyword">implements</span> IbaseCRUD&lt;User&gt; &#123;</span><br><span class="line">  data: User[] = [];</span><br><span class="line"></span><br><span class="line">  add(user: User): <span class="built_in">void</span> &#123;</span><br><span class="line">    user = &#123; ...User, id: <span class="built_in">Date</span>.now() &#125;;</span><br><span class="line">    <span class="keyword">this</span>.data.push(user);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"save user"</span>, user.id);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  getById(id: <span class="built_in">number</span>): User &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.data.find(<span class="function">(<span class="params">i</span>) =&gt;</span> i.id === id);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> userCRUD = <span class="keyword">new</span> UserCRUD();</span><br><span class="line">userCRUD.add(<span class="keyword">new</span> User(<span class="string">"tom"</span>, <span class="number">12</span>));</span><br><span class="line">userCRUD.add(<span class="keyword">new</span> User(<span class="string">"tom2"</span>, <span class="number">13</span>));</span><br><span class="line"><span class="built_in">console</span>.log(userCRUD.data);</span><br></pre></td></tr></table></figure>
 <h2 id="泛型类"><a href="#泛型类" class="headerlink" title="泛型类"></a>泛型类</h2><hr>
 <p>在定义类时, 为类中的属性或方法定义泛型类型 在创建类的实例时, 再指定特定的泛型类型</p>
-<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">GenericNumber</span>&lt;<span class="title">T</span>&gt; </span>&#123;</span><br><span class="line">  <span class="attr">zeroValue</span>: T;</span><br><span class="line">  add: <span class="function">(<span class="params">x: T, y: T</span>) =&gt;</span> T;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> myGenericNumber = <span class="keyword">new</span> GenericNumber&lt;<span class="built_in">number</span>&gt;();</span><br><span class="line">myGenericNumber.zeroValue = <span class="number">0</span>;</span><br><span class="line">myGenericNumber.add = <span class="function"><span class="keyword">function</span> (<span class="params">x, y</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> x + y;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> myGenericString = <span class="keyword">new</span> GenericNumber&lt;<span class="built_in">string</span>&gt;();</span><br><span class="line">myGenericString.zeroValue = <span class="string">&quot;abc&quot;</span>;</span><br><span class="line">myGenericString.add = <span class="function"><span class="keyword">function</span> (<span class="params">x, y</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> x + y;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(myGenericString.add(myGenericString.zeroValue, <span class="string">&quot;test&quot;</span>));</span><br><span class="line"><span class="built_in">console</span>.log(myGenericNumber.add(myGenericNumber.zeroValue, <span class="number">12</span>));</span><br></pre></td></tr></table></figure>
+<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> GenericNumber&lt;T&gt; &#123;</span><br><span class="line">  zeroValue: T;</span><br><span class="line">  add: <span class="function">(<span class="params">x: T, y: T</span>) =&gt;</span> T;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> myGenericNumber = <span class="keyword">new</span> GenericNumber&lt;<span class="built_in">number</span>&gt;();</span><br><span class="line">myGenericNumber.zeroValue = <span class="number">0</span>;</span><br><span class="line">myGenericNumber.add = <span class="function"><span class="keyword">function</span> (<span class="params">x, y</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> x + y;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> myGenericString = <span class="keyword">new</span> GenericNumber&lt;<span class="built_in">string</span>&gt;();</span><br><span class="line">myGenericString.zeroValue = <span class="string">"abc"</span>;</span><br><span class="line">myGenericString.add = <span class="function"><span class="keyword">function</span> (<span class="params">x, y</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> x + y;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(myGenericString.add(myGenericString.zeroValue, <span class="string">"test"</span>));</span><br><span class="line"><span class="built_in">console</span>.log(myGenericNumber.add(myGenericNumber.zeroValue, <span class="number">12</span>));</span><br></pre></td></tr></table></figure>
 <h2 id="泛型约束"><a href="#泛型约束" class="headerlink" title="泛型约束"></a>泛型约束</h2><hr>
 <p>如果我们直接对一个泛型参数取 <code>length</code> 属性, 会报错, 因为这个泛型根本就不知道它有这个属性</p>
-<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 没有泛型约束</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>&lt;<span class="title">T</span>&gt;(<span class="params">x: T</span>): <span class="title">void</span> </span>&#123;</span><br><span class="line">  <span class="comment">// Error: Property &#x27;length&#x27; does not exist on type &#x27;T&#x27;.</span></span><br><span class="line">  <span class="comment">//   console.log(x.length);</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//添加泛型约束实现</span></span><br><span class="line"><span class="keyword">interface</span> Lengthwise &#123;</span><br><span class="line">  <span class="attr">length</span>: <span class="built_in">number</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn2</span>&lt;<span class="title">T</span> <span class="title">extends</span> <span class="title">Lengthwise</span>&gt;(<span class="params">x: T</span>): <span class="title">void</span> </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(x.length);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">fn(<span class="string">&quot;12&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Error: Argument of type &#x27;number&#x27; is not assignable to parameter of type &#x27;Lengthwise&#x27;.</span></span><br><span class="line"><span class="comment">// fn(12)</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 没有泛型约束</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>&lt;<span class="title">T</span>&gt;(<span class="params">x: T</span>): <span class="title">void</span> </span>&#123;</span><br><span class="line">  <span class="comment">// Error: Property 'length' does not exist on type 'T'.</span></span><br><span class="line">  <span class="comment">//   console.log(x.length);</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//添加泛型约束实现</span></span><br><span class="line"><span class="keyword">interface</span> Lengthwise &#123;</span><br><span class="line">  length: <span class="built_in">number</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn2</span>&lt;<span class="title">T</span> <span class="title">extends</span> <span class="title">Lengthwise</span>&gt;(<span class="params">x: T</span>): <span class="title">void</span> </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(x.length);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">fn(<span class="string">"12"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Error: Argument of type 'number' is not assignable to parameter of type 'Lengthwise'.</span></span><br><span class="line"><span class="comment">// fn(12)</span></span><br></pre></td></tr></table></figure>
+
         
         </div>
         <footer class="article-footer">
@@ -361,8 +344,8 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
 <nav id="article-nav">
     
     
-        <a href="/2019/01/24/TypeScript-%E5%85%B6%E4%BB%96/" id="article-nav-older" class="article-nav-link-wrap">
-            <strong class="article-nav-caption">Más viejo</strong>
+        <a href="/2019/01/24/TypeScript-其他/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Older</strong>
             <div class="article-nav-title">TypeScript 其他</div>
         </a>
     
@@ -387,14 +370,14 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
    
         
     <div class="widget-wrap">
-        <h3 class="widget-title">Recientes</h3>
+        <h3 class="widget-title">recent</h3>
         <div class="widget">
             <ul id="recent-post" class="">
                 
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2019/01/29/TypeScript-%E6%B3%9B%E5%9E%8B/" class="thumbnail">
+                            <a href="/2019/01/29/TypeScript-泛型/" class="thumbnail">
     
     
         <span style="background-image:url(https://www.tslang.cn/assets/images/foreground_bluprint.svg)" alt="TypeScript 泛型" class="thumbnail-image"></span>
@@ -405,7 +388,7 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/TypeScript/">TypeScript</a></p>
-                            <p class="item-title"><a href="/2019/01/29/TypeScript-%E6%B3%9B%E5%9E%8B/" class="title">TypeScript 泛型</a></p>
+                            <p class="item-title"><a href="/2019/01/29/TypeScript-泛型/" class="title">TypeScript 泛型</a></p>
                             <p class="item-date"><time datetime="2019-01-29T03:07:22.000Z" itemprop="datePublished">2019-01-29</time></p>
                         </div>
                     </li>
@@ -413,7 +396,7 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2019/01/24/TypeScript-%E5%85%B6%E4%BB%96/" class="thumbnail">
+                            <a href="/2019/01/24/TypeScript-其他/" class="thumbnail">
     
     
         <span style="background-image:url(https://www.tslang.cn/assets/images/foreground_bluprint.svg)" alt="TypeScript 其他" class="thumbnail-image"></span>
@@ -424,7 +407,7 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/TypeScript/">TypeScript</a></p>
-                            <p class="item-title"><a href="/2019/01/24/TypeScript-%E5%85%B6%E4%BB%96/" class="title">TypeScript 其他</a></p>
+                            <p class="item-title"><a href="/2019/01/24/TypeScript-其他/" class="title">TypeScript 其他</a></p>
                             <p class="item-date"><time datetime="2019-01-24T07:15:53.000Z" itemprop="datePublished">2019-01-24</time></p>
                         </div>
                     </li>
@@ -432,7 +415,7 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2019/01/23/TypeScript-%E5%87%BD%E6%95%B0/" class="thumbnail">
+                            <a href="/2019/01/23/TypeScript-函数/" class="thumbnail">
     
     
         <span style="background-image:url(https://www.tslang.cn/assets/images/foreground_bluprint.svg)" alt="TypeScript 函数" class="thumbnail-image"></span>
@@ -443,7 +426,7 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/TypeScript/">TypeScript</a></p>
-                            <p class="item-title"><a href="/2019/01/23/TypeScript-%E5%87%BD%E6%95%B0/" class="title">TypeScript 函数</a></p>
+                            <p class="item-title"><a href="/2019/01/23/TypeScript-函数/" class="title">TypeScript 函数</a></p>
                             <p class="item-date"><time datetime="2019-01-23T08:14:16.000Z" itemprop="datePublished">2019-01-23</time></p>
                         </div>
                     </li>
@@ -451,7 +434,7 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2019/01/22/TypeScript-%E7%B1%BB/" class="thumbnail">
+                            <a href="/2019/01/22/TypeScript-类/" class="thumbnail">
     
     
         <span style="background-image:url(https://www.tslang.cn/assets/images/foreground_bluprint.svg)" alt="TypeScript 类" class="thumbnail-image"></span>
@@ -462,7 +445,7 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/TypeScript/">TypeScript</a></p>
-                            <p class="item-title"><a href="/2019/01/22/TypeScript-%E7%B1%BB/" class="title">TypeScript 类</a></p>
+                            <p class="item-title"><a href="/2019/01/22/TypeScript-类/" class="title">TypeScript 类</a></p>
                             <p class="item-date"><time datetime="2019-01-22T02:27:59.000Z" itemprop="datePublished">2019-01-22</time></p>
                         </div>
                     </li>
@@ -470,7 +453,7 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2019/01/21/TypeScript-%E6%8E%A5%E5%8F%A3/" class="thumbnail">
+                            <a href="/2019/01/21/TypeScript-接口/" class="thumbnail">
     
     
         <span style="background-image:url(https://www.tslang.cn/assets/images/foreground_bluprint.svg)" alt="TypeScript 接口" class="thumbnail-image"></span>
@@ -481,7 +464,7 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/TypeScript/">TypeScript</a></p>
-                            <p class="item-title"><a href="/2019/01/21/TypeScript-%E6%8E%A5%E5%8F%A3/" class="title">TypeScript 接口</a></p>
+                            <p class="item-title"><a href="/2019/01/21/TypeScript-接口/" class="title">TypeScript 接口</a></p>
                             <p class="item-date"><time datetime="2019-01-21T08:47:26.000Z" itemprop="datePublished">2019-01-21</time></p>
                         </div>
                     </li>
@@ -493,16 +476,16 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
     
         
     <div class="widget-wrap">
-        <h3 class="widget-title">Categorias</h3>
+        <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/TypeScript/">TypeScript</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%85%A7%E7%89%87/">照片</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a><span class="category-list-count">9</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/TypeScript/">TypeScript</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/照片/">照片</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/笔记/">笔记</a><span class="category-list-count">9</span></li></ul>
         </div>
     </div>
 
     
         
     <div class="widget-wrap">
-        <h3 class="widget-title">Archivos</h3>
+        <h3 class="widget-title">archives</h3>
         <div class="widget">
             <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a><span class="archive-list-count">1</span></li></ul>
         </div>
@@ -511,25 +494,25 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
     
         
     <div class="widget-wrap">
-        <h3 class="widget-title">Etiquetas</h3>
+        <h3 class="widget-title">tags</h3>
         <div class="widget">
-            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TypeScript/" rel="tag">TypeScript</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html5-css3/" rel="tag">html5+css3</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/" rel="tag">markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%85%A7%E7%89%87/" rel="tag">照片</a><span class="tag-list-count">1</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TypeScript/">TypeScript</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html5-css3/">html5+css3</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/照片/">照片</a><span class="tag-list-count">1</span></li></ul>
         </div>
     </div>
 
     
         
     <div class="widget-wrap">
-        <h3 class="widget-title">Nube de etiquetas</h3>
+        <h3 class="widget-title">tag cloud</h3>
         <div class="widget tagcloud">
-            <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/TypeScript/" style="font-size: 20px;">TypeScript</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/html5-css3/" style="font-size: 15px;">html5+css3</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/%E7%85%A7%E7%89%87/" style="font-size: 10px;">照片</a>
+            <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/TypeScript/" style="font-size: 20px;">TypeScript</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/html5-css3/" style="font-size: 15px;">html5+css3</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/照片/" style="font-size: 10px;">照片</a>
         </div>
     </div>
 
     
         
     <div class="widget-wrap widget-list">
-        <h3 class="widget-title">Links</h3>
+        <h3 class="widget-title">links</h3>
         <div class="widget">
             <ul>
                 
@@ -580,7 +563,7 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
     <div class="outer">
         <div id="footer-info" class="inner">
             &copy;2015 - 2022 Shaw<br>
-            Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a target="_blank" rel="noopener" href="http://github.com/ppoffice">PPOffice</a>
+            Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>
             Hosted by <a href="https://gitee.com/" target="_blank">Gitee Pages</a>
             <script src="https://s22.cnzz.com/z_stat.php?id=1271323883&web_id=1271323883" language="JavaScript"></script>
         </div>        
@@ -605,54 +588,30 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
 
 
     
-        
-<script src="/libs/lightgallery/js/lightgallery.min.js"></script>
-
-        
-<script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
-
-        
-<script src="/libs/lightgallery/js/lg-pager.min.js"></script>
-
-        
-<script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
-
-        
-<script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
-
-        
-<script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
-
-        
-<script src="/libs/lightgallery/js/lg-hash.min.js"></script>
-
-        
-<script src="/libs/lightgallery/js/lg-share.min.js"></script>
-
-        
-<script src="/libs/lightgallery/js/lg-video.min.js"></script>
-
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
     
     
-        
-<script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
-
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
     
     
         <script type="text/x-mathjax-config">
             MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
         </script>
-        
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML.js"></script>
-
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
     
 
 
 
 <!-- Custom Scripts -->
-
 <script src="/js/main.js"></script>
-
 
     </div>
 </body>
