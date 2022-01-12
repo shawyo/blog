@@ -13,7 +13,7 @@ keywords: 前端博客,JavaScript,html5,css3,ES6,NodeJs,shaw blog
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http//nicebp.com
+url: http://nicebp.com
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
