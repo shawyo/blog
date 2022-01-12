@@ -1,0 +1,375 @@
+html {
+  font-size: 20px;
+  -webkit-text-size-adjust: none;
+  background-color: #f72f3c;
+}
+
+
+/*@media only screen and (min-width: 360px) {
+  html {
+    font-size: 18.33333333px !important;
+  }
+}*/
+
+
+/*@media only screen and (min-width: 320px) {
+  html {
+    font-size: 16.33333333px !important;
+  }
+}*/
+
+@media only screen and (min-width: 400px) {
+  html {
+    font-size: 21.33333333px !important;
+  }
+}
+
+@media only screen and (min-width: 414px) {
+  html {
+    font-size: 22.08px !important;
+  }
+}
+
+@media only screen and (min-width: 480px) {
+  html {
+    font-size: 25.6px !important;
+  }
+}
+
+
+/*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
+
+html {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+.page {}
+
+ul, ol {
+  list-style-type: none;
+}
+
+button, a {
+  outline: none;
+}
+
+.white {
+  background-color: white;
+}
+
+.clearfix {}
+
+.clearfix::after {
+  content: '';
+  clear: both;
+  height: 0;
+  *zoom: 1;
+  display: table;
+}
+
+.container {
+  width: 100%;
+  background: #f72f3c url(../images/background.jpg) 0 0 no-repeat;
+  background-size: 100%;
+  /*background-attachment: fixed;*/
+}
+
+.slogan {
+  padding-top: 3%;
+  text-align: center;
+  /*background: url(../images/Character.png)0 0 no-repeat;
+  background-size: 100%;*/
+}
+
+.desc {
+  padding: 5% 6%;
+  color: #fef6d2;
+  font-size: 0.6rem;
+  margin: 16% 7% 15px;
+  border-radius: 15px;
+  background-color: #d62a36;
+  box-shadow: 1px 3px 2px #b31c24 inset;
+  text-align: center;
+}
+
+.desc P {
+  padding-bottom: 2%;
+  font-size: 1.3rem;
+  color: #fff68d;
+  /* letter-spacing: 3px; */
+}
+
+.desc span {
+  color: #fff68d;
+}
+
+.downGame {
+  display: block;
+  text-align: center;
+  /*width: 211px;
+  height: 78px;*/
+  /*background: url(../images/Button.png) 0 0 no-repeat;
+  background-size:211px 78px;*/
+}
+
+.downGame img {
+  width: 50%
+}
+
+.downGame img:active {
+  width: 48%
+}
+
+.weui-footer, .weui-footer a {
+  color: #ffe3e5;
+}
+
+
+
+@media only screen and (min-width: 414px) {
+  .downGame {
+    height: 80px;
+  }
+.downGame img{
+    width: 207px;
+    height: 79px;
+}
+    .downGame img:active {
+    width: 195px;
+    height: 74px;
+}
+}
+
+@media only screen and (min-height: 736px) {
+/*
+  .weui-footer {
+    position: fixed;
+    bottom: .52em;
+    left: 0;
+    right: 0;
+  }
+*/
+}
+
+@media screen and (max-width: 360px) {
+  .redPacketTop li {
+    font-size: 14px;
+  }
+  .icon_redpacket {
+    display: inline-block;
+    background: url(../img/pic_redPackets.png) 0 0 no-repeat;
+    width: 33px;
+    height: 45px;
+    background-size: 33px 45px;
+    vertical-align: middle;
+  }
+  .redPacketTop li .btn {
+    width: 80px;
+    height: 30px;
+    line-height: 29px;
+    font-size: 12px;
+  }
+}
+.video {
+      opacity: 0;
+      position: absolute;
+      top: 26%;
+      left: 50%;
+      margin-left: -150px;
+      width: 300px;
+      background: #000;
+      text-align: center;
+      font-size: 0;
+
+      /* overflow: hidden; */
+    }
+
+    .video .title {
+      position: relative;
+      background: #000;
+      color: #fff;
+      font-size: 14px;
+      padding: 10px 10px;
+      border-radius: 4px 4px 0 0;
+    }
+
+    .video .close {
+      position: absolute;
+      right: -15px;
+      top: -10px;
+      width: 30px;
+      height: 30px;
+      background: #f72f3c;
+      color: #fff;
+      line-height: 30px;
+      font-size: 17px;
+      border-radius: 50px;
+      text-align: center;
+    }
+
+    .video .close:before,
+    .video .close:after {
+      position: absolute;
+      content: '';
+      top: 50%;
+      left: 0;
+      margin-left: 6px;
+      margin-top:-1px;
+      background: #fff;
+      width: 60%;
+      border-radius: 5px;
+      height: 2.5px;
+    }
+
+    .video .close:before {
+      transform: rotate(45deg);
+      -webkit-transform: rotate(45deg);
+    }
+
+    .video .close:after {
+      transform: rotate(-45deg);
+      -webkit-transform: rotate(-45deg);
+    }
+
+    .bounceIn {
+      animation: duration 0.75s;
+      animation-name: bounceIn;
+      opacity: 1;
+    }
+
+    .bounceOut {
+      animation: duration 0.75s;
+      animation-name: bounceOut;
+      opacity: 0;
+    }
+    @-webkit-keyframes bounceOut {
+      20% {
+        -webkit-transform: scale3d(.9, .9, .9);
+        transform: scale3d(.9, .9, .9)
+      }
+
+      50%,
+      55% {
+        opacity: 1;
+        -webkit-transform: scale3d(1.1, 1.1, 1.1);
+        transform: scale3d(1.1, 1.1, 1.1)
+      }
+
+      to {
+        opacity: 0;
+        -webkit-transform: scale3d(.3, .3, .3);
+        transform: scale3d(.3, .3, .3)
+      }
+    }
+
+    @keyframes bounceOut {
+      20% {
+        -webkit-transform: scale3d(.9, .9, .9);
+        transform: scale3d(.9, .9, .9)
+      }
+
+      50%,
+      55% {
+        opacity: 1;
+        -webkit-transform: scale3d(1.1, 1.1, 1.1);
+        transform: scale3d(1.1, 1.1, 1.1)
+      }
+
+      to {
+        opacity: 0;
+        -webkit-transform: scale3d(.3, .3, .3);
+        transform: scale3d(.3, .3, .3)
+      }
+    }
+
+    @-webkit-keyframes bounceIn {
+      0%,
+      20%,
+      40%,
+      60%,
+      80%,
+      to {
+        -webkit-animation-timing-function: cubic-bezier(.215, .61, .355, 1);
+        animation-timing-function: cubic-bezier(.215, .61, .355, 1)
+      }
+
+      0% {
+        opacity: 0;
+        -webkit-transform: scale3d(.3, .3, .3);
+        transform: scale3d(.3, .3, .3)
+      }
+
+      20% {
+        -webkit-transform: scale3d(1.1, 1.1, 1.1);
+        transform: scale3d(1.1, 1.1, 1.1)
+      }
+
+      40% {
+        -webkit-transform: scale3d(.9, .9, .9);
+        transform: scale3d(.9, .9, .9)
+      }
+
+      60% {
+        opacity: 1;
+        -webkit-transform: scale3d(1.03, 1.03, 1.03);
+        transform: scale3d(1.03, 1.03, 1.03)
+      }
+
+      80% {
+        -webkit-transform: scale3d(.97, .97, .97);
+        transform: scale3d(.97, .97, .97)
+      }
+
+      to {
+        opacity: 1;
+        -webkit-transform: scaleX(1);
+        transform: scaleX(1)
+      }
+    }
+
+    @keyframes bounceIn {
+      0%,
+      20%,
+      40%,
+      60%,
+      80%,
+      to {
+        -webkit-animation-timing-function: cubic-bezier(.215, .61, .355, 1);
+        animation-timing-function: cubic-bezier(.215, .61, .355, 1)
+      }
+
+      0% {
+        opacity: 0;
+        -webkit-transform: scale3d(.3, .3, .3);
+        transform: scale3d(.3, .3, .3)
+      }
+
+      20% {
+        -webkit-transform: scale3d(1.1, 1.1, 1.1);
+        transform: scale3d(1.1, 1.1, 1.1)
+      }
+
+      40% {
+        -webkit-transform: scale3d(.9, .9, .9);
+        transform: scale3d(.9, .9, .9)
+      }
+
+      60% {
+        opacity: 1;
+        -webkit-transform: scale3d(1.03, 1.03, 1.03);
+        transform: scale3d(1.03, 1.03, 1.03)
+      }
+
+      80% {
+        -webkit-transform: scale3d(.97, .97, .97);
+        transform: scale3d(.97, .97, .97)
+      }
+
+      to {
+        opacity: 1;
+        -webkit-transform: scaleX(1);
+        transform: scaleX(1)
+      }
+    }

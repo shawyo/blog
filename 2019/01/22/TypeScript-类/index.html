@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>TypeScript 类 | Shaw Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    
+        <meta name="keywords" content="ts,typescript,TypeScript,前端博客,JavaScript,html5,css3,ES6,NodeJs,shaw blog">
+        
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta name="description" content="对于传统的 JavaScript 程序我们会使用函数和基于原型的继承来创建可重用的组件，但对于熟悉使用面向对象方式的程序员使用这些语法就有些棘手，因为他们用的是基于类的继承并且对象是由类构建出来的。 从 ECMAScript 2015，也就是 ES6 开始， JavaScript 程序员将能够使用基于类的面向对象的方式。 使用 TypeScript，我们允许开发者现在就使用这些特性，并且编译后的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="TypeScript 类">
+<meta property="og:url" content="http://nicebp.com/2019/01/22/TypeScript-%E7%B1%BB/index.html">
+<meta property="og:site_name" content="Shaw Blog">
+<meta property="og:description" content="对于传统的 JavaScript 程序我们会使用函数和基于原型的继承来创建可重用的组件，但对于熟悉使用面向对象方式的程序员使用这些语法就有些棘手，因为他们用的是基于类的继承并且对象是由类构建出来的。 从 ECMAScript 2015，也就是 ES6 开始， JavaScript 程序员将能够使用基于类的面向对象的方式。 使用 TypeScript，我们允许开发者现在就使用这些特性，并且编译后的">
+<meta property="og:locale">
+<meta property="og:image" content="https://www.tslang.cn/assets/images/foreground_bluprint.svg">
+<meta property="article:published_time" content="2019-01-22T02:27:59.000Z">
+<meta property="article:modified_time" content="2022-01-12T07:29:47.985Z">
+<meta property="article:author" content="Shaw">
+<meta property="article:tag" content="TypeScript">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.tslang.cn/assets/images/foreground_bluprint.svg">
+    
+
+    
+        <link rel="alternate" href="/" title="Shaw Blog" type="application/atom+xml" />
+    
+
+    
+
+    
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/libs/open-sans/styles.css">
+
+    
+<link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+
+    <!-- 
+<link rel="stylesheet" href="/css/style.css">
+ -->
+    
+<link rel="stylesheet" href="/css/style_dark.css">
+
+
+    
+<script src="/libs/jquery/2.1.3/jquery.min.js"></script>
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+
+    
+    
+    
+    
+
+
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                
+                <span class="site-title">Shaw Blog</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/.">Home</a>
+                
+                    <a class="main-nav-link" href="/archives">Archives</a>
+                
+                    <a class="main-nav-link" href="/categories">Categories</a>
+                
+                    <a class="main-nav-link" href="/tags">Tags</a>
+                
+                    <a class="main-nav-link" href="/about">About</a>
+                
+            </nav>
+            
+                
+                <nav id="sub-nav">
+                    <div class="profile" id="profile-nav">
+                        <a id="profile-anchor" href="javascript:;">
+                            <img class="avatar" src="/css/images/avatar.png" />
+                            <i class="fa fa-caret-down"></i>
+                        </a>
+                    </div>
+                </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/.">Home</a></td>
+                
+                    <td><a class="main-nav-link" href="/archives">Archives</a></td>
+                
+                    <td><a class="main-nav-link" href="/categories">Categories</a></td>
+                
+                    <td><a class="main-nav-link" href="/tags">Tags</a></td>
+                
+                    <td><a class="main-nav-link" href="/about">About</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+                
+
+<aside id="profile">
+    <div class="inner profile-inner">
+        <div class="base-info profile-block">
+            <img id="avatar" src="/css/images/avatar.png" />
+            <h2 id="name">ShawYo</h2>
+            <h3 id="title">Web Developer &amp; Designer</h3>
+            <span id="location"><i class="fa fa-map-marker"></i>HangZhou, China</span>
+            <a id="follow" target="_blank" href="https://github.com/shawyo/">FOLLOW</a>
+        </div>
+        <div class="article-info profile-block">
+            <div class="article-info-block">
+                18
+                <span>posts</span>
+            </div>
+            <div class="article-info-block">
+                6
+                <span>tags</span>
+            </div>
+        </div>
+        <!-- 
+        <div class="profile-block social-links">
+            <table>
+                <tr>
+                    
+                    
+                    <td>
+                        <a href="https://github.com/shawyo/" target="_blank" title="github" class=tooltip>
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="/" target="_blank" title="twitter" class=tooltip>
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="/" target="_blank" title="facebook" class=tooltip>
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="/" target="_blank" title="dribbble" class=tooltip>
+                            <i class="fa fa-dribbble"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="/" target="_blank" title="rss" class=tooltip>
+                            <i class="fa fa-rss"></i>
+                        </a>
+                    </td>
+                    
+                </tr>
+            </table>
+        </div>
+         -->
+    </div>
+</aside>
+
+            
+            <section id="main"><article id="post-TypeScript-类" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            
+	
+		<img src="https://www.tslang.cn/assets/images/foreground_bluprint.svg" class="article-banner" />
+	
+
+
+
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+            TypeScript 类
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2019/01/22/TypeScript-%E7%B1%BB/">
+            <time datetime="2019-01-22T02:27:59.000Z" itemprop="datePublished">2019-01-22</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/TypeScript/">TypeScript</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link-link" href="/tags/TypeScript/" rel="tag">TypeScript</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <p>对于传统的 JavaScript 程序我们会使用<code>函数</code>和<code>基于原型的继承</code>来创建可重用的组件，但对于熟悉使用面向对象方式的程序员使用这些语法就有些棘手，因为他们用的是<code>基于类的继承</code>并且对象是由类构建出来的。 从 ECMAScript 2015，也就是 ES6 开始， JavaScript 程序员将能够使用基于类的面向对象的方式。 使用 TypeScript，我们允许开发者现在就使用这些特性，并且编译后的 JavaScript 可以在所有主流浏览器和平台上运行，而不需要等到下个 JavaScript 版本。</p>
+<a id="more"></a>
+<h2 id="类-class"><a href="#类-class" class="headerlink" title="类 class"></a>类 <code>class</code></h2><hr>
+<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * 类的基本定义与使用</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Greeter</span> </span>&#123;</span><br><span class="line">  <span class="comment">// 属性声明</span></span><br><span class="line">  <span class="attr">message</span>: <span class="built_in">string</span>;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 构造函数</span></span><br><span class="line">  <span class="function"><span class="title">constructor</span>(<span class="params">message: <span class="built_in">string</span></span>)</span> &#123;</span><br><span class="line">    <span class="built_in">this</span>.message = message;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">//一般方法</span></span><br><span class="line">  greet(): <span class="built_in">string</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">`Hello <span class="subst">$&#123;<span class="built_in">this</span>.message&#125;</span>`</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建类实例</span></span><br><span class="line"><span class="keyword">const</span> greeter = <span class="keyword">new</span> Greeter(<span class="string">&quot;world&quot;</span>);</span><br><span class="line"><span class="comment">// 调用实例方法</span></span><br><span class="line"><span class="built_in">console</span>.log(greeter.greet());</span><br></pre></td></tr></table></figure>
+<p>如果使用过 C# 或 Java，你会对这种语法非常熟悉。 声明一个 <code>Greeter</code> 类。这个类有 3 个成员：一个叫做 <code>message</code> 的属性，一个<code>构造函数</code>和一个 <code>greet</code> 方法。</p>
+<p>你会注意到，在引用任何一个类成员的时候都用了 <code>this</code>。 它表示我们访问的是类的成员。</p>
+<p>后面一行，使用 <code>new</code>构造了 <code>Greeter</code> 类的一个实例。它会调用之前定义的构造函数，创建一个 <code>Greeter</code> 类型的新对象，并执行构造函数初始化它。</p>
+<p>最后一行通过 <code>greeter</code> 对象调用其 <code>greet</code> 方法</p>
+<h2 id="继承-extends"><a href="#继承-extends" class="headerlink" title="继承 extends"></a>继承 <code>extends</code></h2><hr>
+<p>在 TypeScript 里，可以使用常用的面向对象模式。基于类的程序设计中一种最基本的模式是允许使用继承来扩展现有的类。</p>
+<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * 类的继承</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Animal</span> </span>&#123;</span><br><span class="line">  <span class="function"><span class="title">run</span>(<span class="params">distance: <span class="built_in">number</span></span>)</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">`Animal run <span class="subst">$&#123;distance&#125;</span>`</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Dog</span> <span class="keyword">extends</span> <span class="title">Animal</span> </span>&#123;</span><br><span class="line">  <span class="function"><span class="title">cry</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;wang~&quot;</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> dog = <span class="keyword">new</span> Dog();</span><br><span class="line">dog.cry();</span><br><span class="line">dog.run(<span class="number">100</span>); <span class="comment">// 可以调用从父中继承得到的方法</span></span><br></pre></td></tr></table></figure>
+<p>这个例子展示了最基本的继承：类从基类中继承了属性和方法。 这里，<code>Dog</code> 是一个 派生类，它派生自 <code>Animal</code> 基类，通过 <code>extends</code> 关键字。 派生类通常被称作子类，基类通常被称作超类。<br>因为 <code>Dog</code> 继承了 <code>Animal</code> 的功能，因此我们可以创建一个 <code>Dog</code> 的实例，它能够 <code>cry()</code> 和 <code>run()</code></p>
+<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Animal</span> </span>&#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="built_in">string</span>;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="title">constructor</span>(<span class="params">name: <span class="built_in">string</span></span>)</span> &#123;</span><br><span class="line">    <span class="built_in">this</span>.name = name;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="title">run</span>(<span class="params">distance: <span class="built_in">number</span> = <span class="number">0</span></span>)</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">`<span class="subst">$&#123;<span class="built_in">this</span>.name&#125;</span> run <span class="subst">$&#123;distance&#125;</span>m`</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Snake</span> <span class="keyword">extends</span> <span class="title">Animal</span> </span>&#123;</span><br><span class="line">  <span class="function"><span class="title">constructor</span>(<span class="params">name: <span class="built_in">string</span></span>)</span> &#123;</span><br><span class="line">    <span class="comment">// 调用父类构造方法</span></span><br><span class="line">    <span class="built_in">super</span>(name);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 重写父类方法</span></span><br><span class="line">  <span class="function"><span class="title">run</span>(<span class="params">distance: <span class="built_in">number</span> = <span class="number">5</span></span>)</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;sliding...&quot;</span>);</span><br><span class="line">    <span class="comment">// 调用父类型的一般方法</span></span><br><span class="line">    <span class="built_in">super</span>.run(distance);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Horse</span> <span class="keyword">extends</span> <span class="title">Animal</span> </span>&#123;</span><br><span class="line">  <span class="function"><span class="title">constructor</span>(<span class="params">name: <span class="built_in">string</span></span>)</span> &#123;</span><br><span class="line">    <span class="comment">// 调用父类构造方法</span></span><br><span class="line">    <span class="built_in">super</span>(name);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 重写父类方法</span></span><br><span class="line">  <span class="function"><span class="title">run</span>(<span class="params">distance: <span class="built_in">number</span> = <span class="number">50</span></span>)</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;dashing...&quot;</span>);</span><br><span class="line">    <span class="comment">// 调用父类型的一般方法</span></span><br><span class="line">    <span class="built_in">super</span>.run(distance);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="title">xxx</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;xxx()&quot;</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> snake = <span class="keyword">new</span> Snake(<span class="string">&quot;sn&quot;</span>);</span><br><span class="line">snake.run();</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> horse = <span class="keyword">new</span> Horse(<span class="string">&quot;ho&quot;</span>);</span><br><span class="line">horse.run();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 父类型引用指向子类型的实例 ==&gt; 多态</span></span><br><span class="line"><span class="keyword">const</span> tom: Animal = <span class="keyword">new</span> Horse(<span class="string">&quot;tom&quot;</span>);</span><br><span class="line">tom.run();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 如果子类没有扩展的方法，可以让子类型引用指向夫类型的实例</span></span><br><span class="line"><span class="keyword">const</span> jreey: Snake = <span class="keyword">new</span> Animal(<span class="string">&quot;jreey&quot;</span>);</span><br><span class="line">jreey.run();</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 如果子类型有扩展的方法, 不能让子类型引用指向父类型的实例 */</span></span><br><span class="line"><span class="comment">// Error: Property &#x27;xxx&#x27; is missing in type &#x27;Animal&#x27; but required in type &#x27;Horse&#x27;.</span></span><br><span class="line"><span class="comment">// const tom2: Horse = new Animal(&#x27;tom2&#x27;)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Error: Cannot find name &#x27;tom2&#x27;. Did you mean &#x27;tom&#x27;?</span></span><br><span class="line"><span class="comment">// tom2.run()</span></span><br></pre></td></tr></table></figure>
+<p>这个例子展示了一些上面没有提到的特性。 这一次，我们使用 <code>extends</code> 关键字创建了 <code>Animal</code> 的两个子类：<code>Horse</code> 和 <code>Snake</code>。</p>
+<p>与前一个例子的不同点是，派生类包含了一个构造函数，它 必须调用 <code>super()</code>，它会执行基类的构造函数。 而且，在构造函数里访问 <code>this</code> 的属性之前，我们 一定要调用 <code>super()</code>。 这个是 TypeScript 强制执行的一条重要规则。</p>
+<p>这个例子演示了如何在子类里可以重写父类的方法。<code>Snake</code> 类和 <code>Horse</code> 类都创建了 <code>run</code> 方法，它们重写了从 <code>Animal</code> 继承来的 <code>run</code> 方法，使得 <code>run</code> 方法根据不同的类而具有不同的功能。<br>注意，即使 <code>tom</code> 被声明为 <code>Animal</code> 类型，但因为它的值是 <code>Horse</code>，调用 tom.run() 时，它会调用 Horse 里重写的方法。</p>
+<h2 id="公共，私有与受保护的修饰符"><a href="#公共，私有与受保护的修饰符" class="headerlink" title="公共，私有与受保护的修饰符"></a>公共，私有与受保护的修饰符</h2><hr>
+<h3 id="默认为-public"><a href="#默认为-public" class="headerlink" title="默认为 public"></a>默认为 <code>public</code></h3><p>上面的例子里，可以自由的访问程序里定义的成员。如果你的其他语言的类比较了解，就会注意到之前的代码里面并没有使用<code>public</code>来做修饰；例如, C# 要求必须明确的使用 <code>public</code> 指定成员是可见的。在 TypeScript 中，成员都默认为 <code>public</code></p>
+<p>可以明确的将一个成员标记成 <code>public</code> ,可以用下面的方式重写上面的 <code>Animal</code> 类</p>
+<h3 id="内部私有-private"><a href="#内部私有-private" class="headerlink" title="内部私有 private"></a>内部私有 <code>private</code></h3><p>当被标记 <code>pricate</code> ，它就不能在声明它的类的外部访问。</p>
+<h3 id="受保护的-protected"><a href="#受保护的-protected" class="headerlink" title="受保护的 protected"></a>受保护的 <code>protected</code></h3><p><code>protected</code> 修饰符与 <code>private</code> 修饰符的行为很相似，但有一点不同，<code>protected</code>成员在派生类中仍然可以访问。</p>
+<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * 访问修饰符：用来描述类内部的属性/方法的可访问性</span></span><br><span class="line"><span class="comment"> * public: 默认值，公开的外部也可以访问</span></span><br><span class="line"><span class="comment"> * private：只能类内部访问</span></span><br><span class="line"><span class="comment"> * protected：类内部和子类可以访问</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Animal</span> </span>&#123;</span><br><span class="line">  <span class="keyword">public</span> name: <span class="built_in">string</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">public</span> <span class="function"><span class="title">constructor</span>(<span class="params">name: <span class="built_in">string</span></span>)</span> &#123;</span><br><span class="line">    <span class="built_in">this</span>.name = name;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">public</span> <span class="function"><span class="title">run</span>(<span class="params">distance: <span class="built_in">number</span> = <span class="number">0</span></span>)</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">`<span class="subst">$&#123;<span class="built_in">this</span>.name&#125;</span> run <span class="subst">$&#123;distance&#125;</span>m`</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span> <span class="keyword">extends</span> <span class="title">Animal</span> </span>&#123;</span><br><span class="line">  <span class="keyword">private</span> age: <span class="built_in">number</span> = <span class="number">12</span>;</span><br><span class="line">  <span class="keyword">protected</span> sex: <span class="built_in">string</span> = <span class="string">&quot;Man&quot;</span>;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="title">run</span>(<span class="params">distance: <span class="built_in">number</span> = <span class="number">5</span></span>)</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;Person jumping...&quot;</span>);</span><br><span class="line">    <span class="built_in">super</span>.run(distance);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span> <span class="keyword">extends</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line">  <span class="function"><span class="title">run</span>(<span class="params">distance: <span class="built_in">number</span> = <span class="number">6</span></span>)</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;Student jumping...&quot;</span>);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">this</span>.sex); <span class="comment">// 子类能看到父类中受保护的成员</span></span><br><span class="line">    <span class="comment">// console.log(this.age); // 子类看不到父类中私有的成员</span></span><br><span class="line"></span><br><span class="line">    <span class="built_in">super</span>.run(distance);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">new</span> Person(<span class="string">&quot;tom&quot;</span>).name); <span class="comment">//公开可见的</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Error: Property &#x27;sex&#x27; is protected and only accessible within class &#x27;Person&#x27; and its subclasses.</span></span><br><span class="line"><span class="comment">// console.log(new Person(&quot;tom&quot;).sex); // 受保护的不可见</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Error: Property &#x27;age&#x27; is private and only accessible within class &#x27;Person&#x27;.</span></span><br><span class="line"><span class="comment">// console.log(new Person(&quot;tom&quot;).age); // 私有不可见</span></span><br></pre></td></tr></table></figure>
+<h2 id="修饰符-readonly"><a href="#修饰符-readonly" class="headerlink" title="修饰符 readonly"></a>修饰符 <code>readonly</code></h2><hr>
+<p>使用 <code>readonly</code> 关键字将属性设置为只读的。 只读属性必须在声明时或构造函数里被初始化</p>
+<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line">  <span class="keyword">readonly</span> name: <span class="built_in">string</span> = <span class="string">&quot;tom&quot;</span>;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="title">constructor</span>(<span class="params">name: <span class="built_in">string</span></span>)</span> &#123;</span><br><span class="line">    <span class="built_in">this</span>.name = name;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> jerry = <span class="keyword">new</span> Person(<span class="string">&quot;jerry&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Error: Cannot assign to &#x27;name&#x27; because it is a read-only property.</span></span><br><span class="line"><span class="comment">// jerry.name = &quot;tony&quot;; // Error</span></span><br></pre></td></tr></table></figure>
+<h3 id="参数属性"><a href="#参数属性" class="headerlink" title="参数属性"></a>参数属性</h3><p>在上面的例子中，必须在 <code>Person</code> 类里定义一个只读成员 <code>name</code> 和一个参数为 <code>name</code> 的构造函数，并且立刻将 <code>name</code> 的值赋给 <code>this.name</code>，这种情况经常会遇到。 参数属性可以方便地让我们在一个地方定义并初始化一个成员。 下面的例子是对之前 <code>Person</code> 类的修改版，使用了参数属性</p>
+<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person2</span> </span>&#123;</span><br><span class="line">  <span class="function"><span class="title">constructor</span>(<span class="params"><span class="keyword">readonly</span> name: <span class="built_in">string</span></span>)</span> &#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> p = <span class="keyword">new</span> Person2(<span class="string">&quot;jack&quot;</span>);</span><br><span class="line"><span class="built_in">console</span>.log(p.name);</span><br></pre></td></tr></table></figure>
+<p>注意看我们是如何舍弃参数 <code>name</code>，仅在构造函数里使用 <code>readonly name: string</code> 参数来创建和初始化 <code>name</code> 成员。 我们把声明和赋值合并至一处。</p>
+<p>参数属性通过给构造函数参数前面添加一个访问限定符来声明。使用 <code>private</code> 限定一个参数属性会声明并初始化一个私有成员；对于 <code>public</code> 和 <code>protected</code> 来说也是一样</p>
+<h2 id="存取器-getters-setters"><a href="#存取器-getters-setters" class="headerlink" title="存取器 getters/setters"></a>存取器 <code>getters/setters</code></h2><hr>
+<p>TypeScript 支持通过 <code>getters/setters</code>来截取对象成员的访问，它能有效帮助你控制对象成员的访问<br>下面来看如何把一个简单的类改写成使用 <code>get</code> 和 <code>set</code>。 首先，我们从一个没有使用存取器的例子开始。</p>
+<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line">  <span class="attr">firstName</span>: <span class="built_in">string</span> = <span class="string">&quot;A&quot;</span>;</span><br><span class="line">  lastName: <span class="built_in">string</span> = <span class="string">&quot;B&quot;</span>;</span><br><span class="line">  <span class="keyword">get</span> <span class="title">fullName</span>(): <span class="title">string</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">this</span>.firstName + <span class="string">&quot;-&quot;</span> + <span class="built_in">this</span>.lastName;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">set</span> <span class="title">fullName</span>(<span class="params">value: <span class="built_in">string</span></span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> names = value.split(<span class="string">&quot;-&quot;</span>);</span><br><span class="line">    <span class="built_in">this</span>.firstName = names[<span class="number">0</span>];</span><br><span class="line">    <span class="built_in">this</span>.lastName = names[<span class="number">1</span>];</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> p = <span class="keyword">new</span> Person();</span><br><span class="line"><span class="built_in">console</span>.log(p.fullName);</span><br><span class="line"></span><br><span class="line">p.firstName = <span class="string">&quot;C&quot;</span>;</span><br><span class="line">p.lastName = <span class="string">&quot;D&quot;</span>;</span><br><span class="line"><span class="built_in">console</span>.log(p.fullName);</span><br><span class="line"></span><br><span class="line">p.fullName = <span class="string">&quot;E-F&quot;</span>;</span><br><span class="line"><span class="built_in">console</span>.log(p.firstName, p.lastName);</span><br></pre></td></tr></table></figure>
+<h2 id="静态属性-static"><a href="#静态属性-static" class="headerlink" title="静态属性 static"></a>静态属性 <code>static</code></h2><hr>
+<p>到目前为止，我们只讨论了类的实例成员，那些仅当类被实例化的时候才会被初始化的属性。 我们也可以创建类的静态成员，这些属性存在于类本身上面而不是类的实例上。 在这个例子里，我们使用 <code>static</code> 定义 <code>origin</code>，因为它是所有网格都会用到的属性。 每个实例想要访问这个属性的时候，都要在 <code>origin</code> 前面加上类名。 如同在实例属性上使用 <code>this.xxx</code> 来访问属性一样，这里我们使用 <code>Person.origin</code> 来访问静态属性。</p>
+<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 静态属性，是类对象的属性</span></span><br><span class="line"><span class="comment"> * 非静态属性，是类实例对象的属性</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="built_in">string</span> = <span class="string">&quot;A&quot;</span>;</span><br><span class="line">  <span class="keyword">static</span> origin: <span class="built_in">string</span> = <span class="string">&quot;B&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(Person.origin);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">new</span> Person().name);</span><br></pre></td></tr></table></figure>
+<h2 id="抽象类-abstract"><a href="#抽象类-abstract" class="headerlink" title="抽象类 abstract"></a>抽象类 <code>abstract</code></h2><hr>
+<p>抽象类做为其它派生类的基类使用。 它们不能被实例化。不同于接口，抽象类可以包含成员的实现细节。 <code>abstract</code> 关键字是用于定义抽象类和在抽象类内部定义抽象方法。</p>
+<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 抽象类</span></span><br><span class="line"><span class="comment"> * 不能创建实例对象，只有实现类才能创建实例</span></span><br><span class="line"><span class="comment"> * 可以包含未实现的抽象方法</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">Animal</span> </span>&#123;</span><br><span class="line">  <span class="keyword">abstract</span> cry(): <span class="built_in">void</span>;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="title">run</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;run()&quot;</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Tom</span> <span class="keyword">extends</span> <span class="title">Animal</span> </span>&#123;</span><br><span class="line">  <span class="function"><span class="title">cry</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;Tom cry()&quot;</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> tom = <span class="keyword">new</span> Tom();</span><br><span class="line">tom.cry();</span><br><span class="line">tom.run();</span><br></pre></td></tr></table></figure>
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+    <div class="bdsharebuttonbox">
+    <a href="#" class="bds_more" data-cmd="more">分享到：</a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间">QQ空间</a>
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博">新浪微博</a>
+    <a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博">腾讯微博</a>
+    <a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网">人人网</a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信">微信</a>
+</div>
+<script>
+window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{"bdSize":16}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+<style>
+    .bdshare_popup_box {
+        border-radius: 4px;
+        border: #e1e1e1 solid 1px;
+    }
+    .bdshare-button-style0-16 a,
+    .bdshare-button-style0-16 .bds_more {
+        padding-left: 20px;
+        margin: 6px 10px 6px 0;
+    }
+    .bdshare_dialog_list a,
+    .bdshare_popup_list a,
+    .bdshare_popup_bottom a {
+        font-family: 'Microsoft Yahei';
+    }
+    .bdshare_popup_top {
+        display: none;
+    }
+    .bdshare_popup_bottom {
+        height: auto;
+        padding: 5px;
+    }
+</style>
+
+
+</div>
+
+            
+    
+
+        </footer>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2019/01/23/TypeScript-%E5%87%BD%E6%95%B0/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Newer</strong>
+            <div class="article-nav-title">
+                
+                    TypeScript 函数
+                
+            </div>
+        </a>
+    
+    
+        <a href="/2019/01/21/TypeScript-%E6%8E%A5%E5%8F%A3/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Older</strong>
+            <div class="article-nav-title">TypeScript 接口</div>
+        </a>
+    
+</nav>
+
+
+    
+</article>
+
+
+    
+    
+        <section id="comments">
+    <div id="valine-thread"></div>
+</section>
+    
+
+</section>
+            
+                
+<aside id="sidebar">
+   
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">recent</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/01/29/TypeScript-%E6%B3%9B%E5%9E%8B/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://www.tslang.cn/assets/images/foreground_bluprint.svg)" alt="TypeScript 泛型" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/TypeScript/">TypeScript</a></p>
+                            <p class="item-title"><a href="/2019/01/29/TypeScript-%E6%B3%9B%E5%9E%8B/" class="title">TypeScript 泛型</a></p>
+                            <p class="item-date"><time datetime="2019-01-29T03:07:22.000Z" itemprop="datePublished">2019-01-29</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/01/24/TypeScript-%E5%85%B6%E4%BB%96/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://www.tslang.cn/assets/images/foreground_bluprint.svg)" alt="TypeScript 其他" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/TypeScript/">TypeScript</a></p>
+                            <p class="item-title"><a href="/2019/01/24/TypeScript-%E5%85%B6%E4%BB%96/" class="title">TypeScript 其他</a></p>
+                            <p class="item-date"><time datetime="2019-01-24T07:15:53.000Z" itemprop="datePublished">2019-01-24</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/01/23/TypeScript-%E5%87%BD%E6%95%B0/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://www.tslang.cn/assets/images/foreground_bluprint.svg)" alt="TypeScript 函数" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/TypeScript/">TypeScript</a></p>
+                            <p class="item-title"><a href="/2019/01/23/TypeScript-%E5%87%BD%E6%95%B0/" class="title">TypeScript 函数</a></p>
+                            <p class="item-date"><time datetime="2019-01-23T08:14:16.000Z" itemprop="datePublished">2019-01-23</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/01/22/TypeScript-%E7%B1%BB/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://www.tslang.cn/assets/images/foreground_bluprint.svg)" alt="TypeScript 类" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/TypeScript/">TypeScript</a></p>
+                            <p class="item-title"><a href="/2019/01/22/TypeScript-%E7%B1%BB/" class="title">TypeScript 类</a></p>
+                            <p class="item-date"><time datetime="2019-01-22T02:27:59.000Z" itemprop="datePublished">2019-01-22</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/01/21/TypeScript-%E6%8E%A5%E5%8F%A3/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://www.tslang.cn/assets/images/foreground_bluprint.svg)" alt="TypeScript 接口" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/TypeScript/">TypeScript</a></p>
+                            <p class="item-title"><a href="/2019/01/21/TypeScript-%E6%8E%A5%E5%8F%A3/" class="title">TypeScript 接口</a></p>
+                            <p class="item-date"><time datetime="2019-01-21T08:47:26.000Z" itemprop="datePublished">2019-01-21</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/TypeScript/">TypeScript</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%85%A7%E7%89%87/">照片</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a><span class="category-list-count">9</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a><span class="archive-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">tags</h3>
+        <div class="widget">
+            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TypeScript/" rel="tag">TypeScript</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html5-css3/" rel="tag">html5+css3</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/" rel="tag">markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%85%A7%E7%89%87/" rel="tag">照片</a><span class="tag-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/TypeScript/" style="font-size: 20px;">TypeScript</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/html5-css3/" style="font-size: 15px;">html5+css3</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/%E7%85%A7%E7%89%87/" style="font-size: 10px;">照片</a>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://fex.baidu.com/" target="_blank">Baidu FEX</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://www.alloyteam.com/" target="_blank">Tencent AlloyTeam</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://tgideas.qq.com/" target="_blank">Tencent TGideas</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://isux.tencent.com/" target="_blank">Tencent ISUX</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://eux.baidu.com/" target="_blank">Baidu EUX</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://taobaofed.org/" target="_blank">Taobao FED</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://75team.com/" target="_blank">Qihu 360</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://jdc.jd.com/" target="_blank">JD JDC</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+
+            
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy;2015 - 2022 Shaw<br>
+            Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a target="_blank" rel="noopener" href="http://github.com/ppoffice">PPOffice</a>
+            Hosted by <a href="https://gitee.com/" target="_blank">Gitee Pages</a>
+            <script src="https://s22.cnzz.com/z_stat.php?id=1271323883&web_id=1271323883" language="JavaScript"></script>
+        </div>        
+    </div>
+</footer>
+        
+    
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//cdn.jsdelivr.net/gh/xcss/valine@v1.1.6/dist/Valine.min.js"></script>
+    <script>
+        new Valine({
+            el: '#valine-thread' ,
+            notify:true,
+            verify:true,
+            app_id: 'Szt8HMQAazvdou8iklHizKPs-gzGzoHsz',
+            app_key: 'PApmoSWTjg2awSf0Fv7VKEeR',
+            placeholder: 'Just Do It'
+        });
+    </script>
+
+
+
+
+    
+        
+<script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-share.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-video.min.js"></script>
+
+    
+    
+        
+<script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+    
+    
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+        </script>
+        
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML.js"></script>
+
+    
+
+
+
+<!-- Custom Scripts -->
+
+<script src="/js/main.js"></script>
+
+
+    </div>
+</body>
+</html>

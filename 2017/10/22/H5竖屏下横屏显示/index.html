@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>H5竖屏下横屏显示 | Shaw Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    
+        <meta name="keywords" content="css,竖屏横屏,H5竖屏下横屏显示,前端博客,JavaScript,html5,css3,ES6,NodeJs,shaw blog">
+        
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta name="description" content="有一天经理说：哎~那个谁，咱这个页面能不能做成，竖屏横着显示，横屏也横这显示的…">
+<meta property="og:type" content="article">
+<meta property="og:title" content="H5竖屏下横屏显示">
+<meta property="og:url" content="http://nicebp.com/2017/10/22/H5%E7%AB%96%E5%B1%8F%E4%B8%8B%E6%A8%AA%E5%B1%8F%E6%98%BE%E7%A4%BA/index.html">
+<meta property="og:site_name" content="Shaw Blog">
+<meta property="og:description" content="有一天经理说：哎~那个谁，咱这个页面能不能做成，竖屏横着显示，横屏也横这显示的…">
+<meta property="og:locale">
+<meta property="og:image" content="http://image.nicebp.com/blog/banner/TB1x3hvMXXXXXcrXFXXXXXXXXXX-900-500.jpg?imageView2/1/w/690/h/295/q/75">
+<meta property="article:published_time" content="2017-10-22T03:47:23.000Z">
+<meta property="article:modified_time" content="2022-01-12T07:29:47.982Z">
+<meta property="article:author" content="Shaw">
+<meta property="article:tag" content="前端博客,JavaScript,html5,css3,ES6,NodeJs,shaw blog">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://image.nicebp.com/blog/banner/TB1x3hvMXXXXXcrXFXXXXXXXXXX-900-500.jpg?imageView2/1/w/690/h/295/q/75">
+    
+
+    
+        <link rel="alternate" href="/" title="Shaw Blog" type="application/atom+xml" />
+    
+
+    
+
+    
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/libs/open-sans/styles.css">
+
+    
+<link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+
+    <!-- 
+<link rel="stylesheet" href="/css/style.css">
+ -->
+    
+<link rel="stylesheet" href="/css/style_dark.css">
+
+
+    
+<script src="/libs/jquery/2.1.3/jquery.min.js"></script>
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+
+    
+    
+    
+    
+
+
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                
+                <span class="site-title">Shaw Blog</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/.">Home</a>
+                
+                    <a class="main-nav-link" href="/archives">Archives</a>
+                
+                    <a class="main-nav-link" href="/categories">Categories</a>
+                
+                    <a class="main-nav-link" href="/tags">Tags</a>
+                
+                    <a class="main-nav-link" href="/about">About</a>
+                
+            </nav>
+            
+                
+                <nav id="sub-nav">
+                    <div class="profile" id="profile-nav">
+                        <a id="profile-anchor" href="javascript:;">
+                            <img class="avatar" src="/css/images/avatar.png" />
+                            <i class="fa fa-caret-down"></i>
+                        </a>
+                    </div>
+                </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/.">Home</a></td>
+                
+                    <td><a class="main-nav-link" href="/archives">Archives</a></td>
+                
+                    <td><a class="main-nav-link" href="/categories">Categories</a></td>
+                
+                    <td><a class="main-nav-link" href="/tags">Tags</a></td>
+                
+                    <td><a class="main-nav-link" href="/about">About</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+                
+
+<aside id="profile">
+    <div class="inner profile-inner">
+        <div class="base-info profile-block">
+            <img id="avatar" src="/css/images/avatar.png" />
+            <h2 id="name">ShawYo</h2>
+            <h3 id="title">Web Developer &amp; Designer</h3>
+            <span id="location"><i class="fa fa-map-marker"></i>HangZhou, China</span>
+            <a id="follow" target="_blank" href="https://github.com/shawyo/">FOLLOW</a>
+        </div>
+        <div class="article-info profile-block">
+            <div class="article-info-block">
+                18
+                <span>posts</span>
+            </div>
+            <div class="article-info-block">
+                6
+                <span>tags</span>
+            </div>
+        </div>
+        <!-- 
+        <div class="profile-block social-links">
+            <table>
+                <tr>
+                    
+                    
+                    <td>
+                        <a href="https://github.com/shawyo/" target="_blank" title="github" class=tooltip>
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="/" target="_blank" title="twitter" class=tooltip>
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="/" target="_blank" title="facebook" class=tooltip>
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="/" target="_blank" title="dribbble" class=tooltip>
+                            <i class="fa fa-dribbble"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="/" target="_blank" title="rss" class=tooltip>
+                            <i class="fa fa-rss"></i>
+                        </a>
+                    </td>
+                    
+                </tr>
+            </table>
+        </div>
+         -->
+    </div>
+</aside>
+
+            
+            <section id="main"><article id="post-H5竖屏下横屏显示" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            
+	
+		<img src="http://image.nicebp.com/blog/banner/TB1x3hvMXXXXXcrXFXXXXXXXXXX-900-500.jpg?imageView2/1/w/690/h/295/q/75" class="article-banner" />
+	
+
+
+
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+            H5竖屏下横屏显示
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2017/10/22/H5%E7%AB%96%E5%B1%8F%E4%B8%8B%E6%A8%AA%E5%B1%8F%E6%98%BE%E7%A4%BA/">
+            <time datetime="2017-10-22T03:47:23.000Z" itemprop="datePublished">2017-10-22</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>
+    </div>
+
+                        
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <p>有一天经理说：哎~那个谁，咱这个页面能不能做成，竖屏横着显示，横屏也横这显示的…<br><a id="more"></a></p>
+<hr>
+<p>想一想大概的实现思路是这样的</p>
+<ol>
+<li>选取一个 dom 节点比如 body ; </li>
+<li>css 赋值宽等于实际的高，高等于实际的宽;</li>
+<li>利用 css3 transform rotate 属性选转90度;</li>
+<li>js 监听 onorientationchange 旋转控制样式;</li>
+</ol>
+<h3 id="核心css"><a href="#核心css" class="headerlink" title="核心css"></a>核心css</h3><p> 测试机型 iphone6/7/8 <code>375*667</code></p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">body</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">667px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">375px</span>;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">rotate</span>(<span class="number">90deg</span>);</span><br><span class="line">    <span class="attribute">transform-origin</span>: <span class="number">0px</span> <span class="number">0px</span> <span class="number">0px</span>;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">0px</span> <span class="number">0px</span> <span class="number">0px</span> <span class="number">375px</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">0px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="核心js"><a href="#核心js" class="headerlink" title="核心js"></a>核心js</h3><p>主要是赋予 dom 节点 css 宽高，监听屏幕旋转做不同的样式更换</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//竖屏默认横屏显示</span></span><br><span class="line"><span class="keyword">if</span> ($(<span class="string">&#x27;body&#x27;</span>).width() &lt; $(<span class="string">&#x27;body&#x27;</span>).height()) &#123;</span><br><span class="line">    $(<span class="string">&#x27;body&#x27;</span>).css(&#123;</span><br><span class="line">        <span class="string">&#x27;width&#x27;</span>: $(<span class="string">&#x27;body&#x27;</span>).height(),</span><br><span class="line">        <span class="string">&#x27;height&#x27;</span>: $(<span class="string">&#x27;body&#x27;</span>).width(),</span><br><span class="line">        <span class="string">&#x27;transform&#x27;</span>: <span class="string">&#x27;rotate(90deg)&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;transform-origin&#x27;</span>: <span class="string">&#x27;0px 0px 0px&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;margin&#x27;</span>: <span class="string">&#x27;0&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;margin-left&#x27;</span>: $(<span class="string">&#x27;body&#x27;</span>).width(),</span><br><span class="line">        <span class="string">&#x27;padding&#x27;</span>: <span class="string">&#x27;0&#x27;</span></span><br><span class="line">    &#125;)</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    $(<span class="string">&#x27;body&#x27;</span>).attr(<span class="string">&#x27;style&#x27;</span>, <span class="string">&#x27;&#x27;</span>)</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"> <span class="comment">//转屏控制</span></span><br><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">&quot;onorientationchange&quot;</span> <span class="keyword">in</span> <span class="built_in">window</span> ? <span class="string">&quot;orientationchange&quot;</span> : <span class="string">&quot;resize&quot;</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">window</span>.orientation === <span class="number">180</span> || <span class="built_in">window</span>.orientation === <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="comment">//设备竖屏状态  </span></span><br><span class="line">        $(<span class="string">&#x27;body&#x27;</span>).css(&#123;</span><br><span class="line">            <span class="string">&#x27;width&#x27;</span>: $(<span class="string">&#x27;body&#x27;</span>).width(),</span><br><span class="line">            <span class="string">&#x27;height&#x27;</span>: $(<span class="string">&#x27;body&#x27;</span>).height(),</span><br><span class="line">            <span class="string">&#x27;transform&#x27;</span>: <span class="string">&#x27;rotate(90deg)&#x27;</span>,</span><br><span class="line">            <span class="string">&#x27;transform-origin&#x27;</span>: <span class="string">&#x27;0px 0px 0px&#x27;</span>,</span><br><span class="line">            <span class="string">&#x27;margin&#x27;</span>: <span class="string">&#x27;0&#x27;</span>,</span><br><span class="line">            <span class="string">&#x27;margin-left&#x27;</span>: $(<span class="string">&#x27;body&#x27;</span>).height(),</span><br><span class="line">            <span class="string">&#x27;padding&#x27;</span>: <span class="string">&#x27;0&#x27;</span></span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">window</span>.orientation === <span class="number">90</span> || <span class="built_in">window</span>.orientation === -<span class="number">90</span>) &#123;</span><br><span class="line">        <span class="comment">//设备横屏状态</span></span><br><span class="line">        $(<span class="string">&#x27;body&#x27;</span>).attr(<span class="string">&#x27;style&#x27;</span>, <span class="string">&#x27;&#x27;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;, <span class="literal">false</span>);</span><br></pre></td></tr></table></figure>
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+    <div class="bdsharebuttonbox">
+    <a href="#" class="bds_more" data-cmd="more">分享到：</a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间">QQ空间</a>
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博">新浪微博</a>
+    <a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博">腾讯微博</a>
+    <a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网">人人网</a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信">微信</a>
+</div>
+<script>
+window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{"bdSize":16}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+<style>
+    .bdshare_popup_box {
+        border-radius: 4px;
+        border: #e1e1e1 solid 1px;
+    }
+    .bdshare-button-style0-16 a,
+    .bdshare-button-style0-16 .bds_more {
+        padding-left: 20px;
+        margin: 6px 10px 6px 0;
+    }
+    .bdshare_dialog_list a,
+    .bdshare_popup_list a,
+    .bdshare_popup_bottom a {
+        font-family: 'Microsoft Yahei';
+    }
+    .bdshare_popup_top {
+        display: none;
+    }
+    .bdshare_popup_bottom {
+        height: auto;
+        padding: 5px;
+    }
+</style>
+
+
+</div>
+
+            
+    
+
+        </footer>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2018/02/22/ESLint-VSCode%E8%87%AA%E5%8A%A8%E5%8C%96%E9%85%8D%E7%BD%AE/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Newer</strong>
+            <div class="article-nav-title">
+                
+                    ESLint&amp;VSCode自动化配置
+                
+            </div>
+        </a>
+    
+    
+        <a href="/2017/10/09/Chrome-%E8%B7%A8%E5%9F%9F%E8%AE%BE%E7%BD%AE/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Older</strong>
+            <div class="article-nav-title">Chrome 跨域设置</div>
+        </a>
+    
+</nav>
+
+
+    
+</article>
+
+
+    
+    
+        <section id="comments">
+    <div id="valine-thread"></div>
+</section>
+    
+
+</section>
+            
+                
+<aside id="sidebar">
+   
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">recent</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/01/29/TypeScript-%E6%B3%9B%E5%9E%8B/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://www.tslang.cn/assets/images/foreground_bluprint.svg)" alt="TypeScript 泛型" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/TypeScript/">TypeScript</a></p>
+                            <p class="item-title"><a href="/2019/01/29/TypeScript-%E6%B3%9B%E5%9E%8B/" class="title">TypeScript 泛型</a></p>
+                            <p class="item-date"><time datetime="2019-01-29T03:07:22.000Z" itemprop="datePublished">2019-01-29</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/01/24/TypeScript-%E5%85%B6%E4%BB%96/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://www.tslang.cn/assets/images/foreground_bluprint.svg)" alt="TypeScript 其他" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/TypeScript/">TypeScript</a></p>
+                            <p class="item-title"><a href="/2019/01/24/TypeScript-%E5%85%B6%E4%BB%96/" class="title">TypeScript 其他</a></p>
+                            <p class="item-date"><time datetime="2019-01-24T07:15:53.000Z" itemprop="datePublished">2019-01-24</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/01/23/TypeScript-%E5%87%BD%E6%95%B0/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://www.tslang.cn/assets/images/foreground_bluprint.svg)" alt="TypeScript 函数" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/TypeScript/">TypeScript</a></p>
+                            <p class="item-title"><a href="/2019/01/23/TypeScript-%E5%87%BD%E6%95%B0/" class="title">TypeScript 函数</a></p>
+                            <p class="item-date"><time datetime="2019-01-23T08:14:16.000Z" itemprop="datePublished">2019-01-23</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/01/22/TypeScript-%E7%B1%BB/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://www.tslang.cn/assets/images/foreground_bluprint.svg)" alt="TypeScript 类" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/TypeScript/">TypeScript</a></p>
+                            <p class="item-title"><a href="/2019/01/22/TypeScript-%E7%B1%BB/" class="title">TypeScript 类</a></p>
+                            <p class="item-date"><time datetime="2019-01-22T02:27:59.000Z" itemprop="datePublished">2019-01-22</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/01/21/TypeScript-%E6%8E%A5%E5%8F%A3/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://www.tslang.cn/assets/images/foreground_bluprint.svg)" alt="TypeScript 接口" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/TypeScript/">TypeScript</a></p>
+                            <p class="item-title"><a href="/2019/01/21/TypeScript-%E6%8E%A5%E5%8F%A3/" class="title">TypeScript 接口</a></p>
+                            <p class="item-date"><time datetime="2019-01-21T08:47:26.000Z" itemprop="datePublished">2019-01-21</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/TypeScript/">TypeScript</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%85%A7%E7%89%87/">照片</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a><span class="category-list-count">9</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a><span class="archive-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">tags</h3>
+        <div class="widget">
+            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TypeScript/" rel="tag">TypeScript</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html5-css3/" rel="tag">html5+css3</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/" rel="tag">markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%85%A7%E7%89%87/" rel="tag">照片</a><span class="tag-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/TypeScript/" style="font-size: 20px;">TypeScript</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/html5-css3/" style="font-size: 15px;">html5+css3</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/%E7%85%A7%E7%89%87/" style="font-size: 10px;">照片</a>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://fex.baidu.com/" target="_blank">Baidu FEX</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://www.alloyteam.com/" target="_blank">Tencent AlloyTeam</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://tgideas.qq.com/" target="_blank">Tencent TGideas</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://isux.tencent.com/" target="_blank">Tencent ISUX</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://eux.baidu.com/" target="_blank">Baidu EUX</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://taobaofed.org/" target="_blank">Taobao FED</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://75team.com/" target="_blank">Qihu 360</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://jdc.jd.com/" target="_blank">JD JDC</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+
+            
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy;2015 - 2022 Shaw<br>
+            Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a target="_blank" rel="noopener" href="http://github.com/ppoffice">PPOffice</a>
+            Hosted by <a href="https://gitee.com/" target="_blank">Gitee Pages</a>
+            <script src="https://s22.cnzz.com/z_stat.php?id=1271323883&web_id=1271323883" language="JavaScript"></script>
+        </div>        
+    </div>
+</footer>
+        
+    
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//cdn.jsdelivr.net/gh/xcss/valine@v1.1.6/dist/Valine.min.js"></script>
+    <script>
+        new Valine({
+            el: '#valine-thread' ,
+            notify:true,
+            verify:true,
+            app_id: 'Szt8HMQAazvdou8iklHizKPs-gzGzoHsz',
+            app_key: 'PApmoSWTjg2awSf0Fv7VKEeR',
+            placeholder: 'Just Do It'
+        });
+    </script>
+
+
+
+
+    
+        
+<script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-share.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-video.min.js"></script>
+
+    
+    
+        
+<script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+    
+    
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+        </script>
+        
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML.js"></script>
+
+    
+
+
+
+<!-- Custom Scripts -->
+
+<script src="/js/main.js"></script>
+
+
+    </div>
+</body>
+</html>
