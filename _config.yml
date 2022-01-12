@@ -13,8 +13,8 @@ keywords: 前端博客,JavaScript,html5,css3,ES6,NodeJs,shaw blog
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://ipvb.gitee.io/blog
-root: /blog
+url: http//nicebp.com
+root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 
@@ -93,6 +93,7 @@ theme: icarus
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: https://gitee.com/seanyo/blog.git
+  # repo: https://gitee.com/seanyo/blog.git
+  repo: https://github.com/shawyo/blog.git
   branch: master
   message: docs update
