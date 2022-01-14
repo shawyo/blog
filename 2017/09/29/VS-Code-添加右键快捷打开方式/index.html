@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    
+    <title>VS Code 添加右键快捷打开方式 | Shaw Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="vs code快捷键,Visual Studio Code,sublime Text3,Sublime添加到右键菜单,将程序添加到右键菜单,前端博客,JavaScript,html5,css3,ES6,NodeJs,shaw blog">
+        
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta name="description" content="Windows软件编辑器及阅读软件，安装后没有出现在右键快捷菜单中使用极为不便，以Visual Studio Code为例添加右键快捷打开方式，快速打开文件及文件夹">
+<meta name="keywords" content="vs code快捷键,Visual Studio Code,sublime Text3,Sublime添加到右键菜单,将程序添加到右键菜单">
+<meta property="og:type" content="article">
+<meta property="og:title" content="VS Code 添加右键快捷打开方式">
+<meta property="og:url" content="http://nicebp.com/2017/09/29/VS-Code-添加右键快捷打开方式/index.html">
+<meta property="og:site_name" content="Shaw Blog">
+<meta property="og:description" content="Windows软件编辑器及阅读软件，安装后没有出现在右键快捷菜单中使用极为不便，以Visual Studio Code为例添加右键快捷打开方式，快速打开文件及文件夹">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://image.nicebp.com/blog/banner/vscode.jpg">
+<meta property="og:updated_time" content="2022-01-12T07:29:47.985Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="VS Code 添加右键快捷打开方式">
+<meta name="twitter:description" content="Windows软件编辑器及阅读软件，安装后没有出现在右键快捷菜单中使用极为不便，以Visual Studio Code为例添加右键快捷打开方式，快速打开文件及文件夹">
+<meta name="twitter:image" content="http://image.nicebp.com/blog/banner/vscode.jpg">
+    
+
+    
+        <link rel="alternate" href="/" title="Shaw Blog" type="application/atom+xml">
+    
+
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/open-sans/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <!-- <link rel="stylesheet" href="/css/style.css"> -->
+    <link rel="stylesheet" href="/css/style_dark.css">
+
+    <script src="/libs/jquery/2.1.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+    
+
+
+</head>
+</html>
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                
+                <span class="site-title">Shaw Blog</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/.">Home</a>
+                
+                    <a class="main-nav-link" href="/archives">Archives</a>
+                
+                    <a class="main-nav-link" href="/categories">Categories</a>
+                
+                    <a class="main-nav-link" href="/tags">Tags</a>
+                
+                    <a class="main-nav-link" href="/about">About</a>
+                
+            </nav>
+            
+                
+                <nav id="sub-nav">
+                    <div class="profile" id="profile-nav">
+                        <a id="profile-anchor" href="javascript:;">
+                            <img class="avatar" src="/css/images/avatar.png" />
+                            <i class="fa fa-caret-down"></i>
+                        </a>
+                    </div>
+                </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/.">Home</a></td>
+                
+                    <td><a class="main-nav-link" href="/archives">Archives</a></td>
+                
+                    <td><a class="main-nav-link" href="/categories">Categories</a></td>
+                
+                    <td><a class="main-nav-link" href="/tags">Tags</a></td>
+                
+                    <td><a class="main-nav-link" href="/about">About</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+                
+
+<aside id="profile">
+    <div class="inner profile-inner">
+        <div class="base-info profile-block">
+            <img id="avatar" src="/css/images/avatar.png" />
+            <h2 id="name">ShawYo</h2>
+            <h3 id="title">Web Developer &amp; Designer</h3>
+            <span id="location"><i class="fa fa-map-marker"></i>HangZhou, China</span>
+            <a id="follow" target="_blank" href="https://github.com/shawyo/">FOLLOW</a>
+        </div>
+        <div class="article-info profile-block">
+            <div class="article-info-block">
+                18
+                <span>posts</span>
+            </div>
+            <div class="article-info-block">
+                6
+                <span>tags</span>
+            </div>
+        </div>
+        <!-- 
+        <div class="profile-block social-links">
+            <table>
+                <tr>
+                    
+                    
+                    <td>
+                        <a href="https://github.com/shawyo/" target="_blank" title="github" class=tooltip>
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="/" target="_blank" title="twitter" class=tooltip>
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="/" target="_blank" title="facebook" class=tooltip>
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="/" target="_blank" title="dribbble" class=tooltip>
+                            <i class="fa fa-dribbble"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="/" target="_blank" title="rss" class=tooltip>
+                            <i class="fa fa-rss"></i>
+                        </a>
+                    </td>
+                    
+                </tr>
+            </table>
+        </div>
+         -->
+    </div>
+</aside>
+
+            
+            <section id="main"><article id="post-VS-Code-添加右键快捷打开方式" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            
+	
+		<img src="http://image.nicebp.com/blog/banner/vscode.jpg" class="article-banner" />
+	
+
+
+
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+            VS Code 添加右键快捷打开方式
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2017/09/29/VS-Code-添加右键快捷打开方式/">
+            <time datetime="2017-09-29T06:35:35.000Z" itemprop="datePublished">2017-09-29</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/笔记/">笔记</a>
+    </div>
+
+                        
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <p>Windows软件编辑器及阅读软件，安装后没有出现在右键快捷菜单中使用极为不便，以Visual Studio Code为例添加右键快捷打开方式，快速打开文件及文件夹<br><a id="more"></a></p>
+<hr>
+<h2 id="快速打开文件"><a href="#快速打开文件" class="headerlink" title="快速打开文件"></a>快速打开文件</h2><h5 id="1-Win-R-输入-regedit-打开运行注册表"><a href="#1-Win-R-输入-regedit-打开运行注册表" class="headerlink" title="1. Win+R 输入 regedit 打开运行注册表"></a>1. <code>Win+R</code> 输入 <code>regedit</code> 打开运行注册表</h5><p><img src="https://s1.ax2x.com/2018/01/29/JAUmQ.png" alt="打开注册表"></p>
+<h5 id="2-打开注册表找到-HKEY-CLASSES-ROOT-shell-分支右键新建项-Open-with-VSCode-名字随意"><a href="#2-打开注册表找到-HKEY-CLASSES-ROOT-shell-分支右键新建项-Open-with-VSCode-名字随意" class="headerlink" title="2. 打开注册表找到 HKEY_CLASSES_ROOT\*\shell 分支右键新建项 Open with VSCode (名字随意)"></a>2. 打开注册表找到 <code>HKEY_CLASSES_ROOT\*\shell</code> 分支右键新建<code>项</code> Open with VSCode (名字随意)</h5><p><img src="https://s1.ax2x.com/2018/01/29/JAcnK.png" alt="新建 Open with VSCode"></p>
+<h5 id="3-在右侧窗口的“默认”键值栏内输入open-with-VS-Code，这是单击鼠标右键时VisualCode启动程序的显示值。项的名称和键值可以任意，以含义明确为好。其中键值将显示在右键菜单中。新建字符串值Icon值-为软件的安装路径如下图："><a href="#3-在右侧窗口的“默认”键值栏内输入open-with-VS-Code，这是单击鼠标右键时VisualCode启动程序的显示值。项的名称和键值可以任意，以含义明确为好。其中键值将显示在右键菜单中。新建字符串值Icon值-为软件的安装路径如下图：" class="headerlink" title="3. 在右侧窗口的“默认”键值栏内输入open with VS Code，这是单击鼠标右键时VisualCode启动程序的显示值。项的名称和键值可以任意，以含义明确为好。其中键值将显示在右键菜单中。新建字符串值Icon值 为软件的安装路径如下图："></a>3. 在右侧窗口的“默认”键值栏内输入<code>open with VS Code</code>，这是单击鼠标右键时VisualCode启动程序的显示值。项的名称和键值可以任意，以含义明确为好。其中键值将显示在右键菜单中。新建字符串值<code>Icon</code>值 为软件的安装路径如下图：</h5><p><img src="https://s1.ax2x.com/2018/01/29/JALiE.png" alt="设置值"></p>
+<h5 id="4-在-Open-with-VSCode-文件下新建-Command-项，在右侧窗口的“默认”键值栏内输入程序所在的路径-如：D-sort-Microsoft-VS-Code-Code-exe-1-其中的-1表示要打开的文件参数。"><a href="#4-在-Open-with-VSCode-文件下新建-Command-项，在右侧窗口的“默认”键值栏内输入程序所在的路径-如：D-sort-Microsoft-VS-Code-Code-exe-1-其中的-1表示要打开的文件参数。" class="headerlink" title="4. 在 Open with VSCode 文件下新建 Command 项，在右侧窗口的“默认”键值栏内输入程序所在的路径 如：D:\sort\Microsoft VS Code\Code.exe %1 其中的%1表示要打开的文件参数。"></a>4. 在 <code>Open with VSCode</code> 文件下新建 <code>Command</code> 项，在右侧窗口的“默认”键值栏内输入程序所在的路径 如：<code>D:\sort\Microsoft VS Code\Code.exe %1</code> 其中的%1表示要打开的文件参数。</h5><p><img src="https://s1.ax2x.com/2018/01/29/JAaK3.png" alt="新建 Command 设置值"></p>
+<h5 id="5-关闭注册表即刻生效"><a href="#5-关闭注册表即刻生效" class="headerlink" title="5. 关闭注册表即刻生效"></a>5. 关闭注册表即刻生效</h5><hr>
+<h2 id="快速打开文件夹"><a href="#快速打开文件夹" class="headerlink" title="快速打开文件夹"></a>快速打开文件夹</h2><h5 id="1-打开注册表找到-HKEY-CLASSES-ROOT-Directory-shell-新建项-Open-with-VSCode-在其下新建字符串值-Icon-值为软件安装路径如图："><a href="#1-打开注册表找到-HKEY-CLASSES-ROOT-Directory-shell-新建项-Open-with-VSCode-在其下新建字符串值-Icon-值为软件安装路径如图：" class="headerlink" title="1. 打开注册表找到 HKEY_CLASSES_ROOT\Directory\shell 新建项 Open with VSCode 在其下新建字符串值 Icon 值为软件安装路径如图："></a>1. 打开注册表找到 <code>HKEY_CLASSES_ROOT\Directory\shell</code> 新建<code>项</code> Open with VSCode 在其下新建字符串值 <code>Icon</code> 值为软件安装路径如图：</h5><p><img src="https://s1.ax2x.com/2018/01/29/JAPbp.png" alt="新建 Open with VSCode，新建 Icon"></p>
+<h5 id="2-在-Open-with-VSCode-文件下新建-Command-项-设置值为软件安装路径-如：D-sort-Microsoft-VS-Code-Code-exe-1"><a href="#2-在-Open-with-VSCode-文件下新建-Command-项-设置值为软件安装路径-如：D-sort-Microsoft-VS-Code-Code-exe-1" class="headerlink" title="2. 在 Open with VSCode 文件下新建 Command 项 设置值为软件安装路径 如：D:\sort\Microsoft VS Code\Code.exe %1"></a>2. 在 <code>Open with VSCode</code> 文件下新建 <code>Command</code> 项 设置值为软件安装路径 如：<code>D:\sort\Microsoft VS Code\Code.exe %1</code></h5><p><img src="https://s1.ax2x.com/2018/01/29/JACWG.png" alt="新建 Command 设置值"></p>
+<h5 id="3-关闭注册表即刻生效"><a href="#3-关闭注册表即刻生效" class="headerlink" title="3.关闭注册表即刻生效"></a>3.关闭注册表即刻生效</h5><p><img src="https://s1.ax2x.com/2018/01/29/JAPbp.png" alt="右键生效"></p>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+    <div class="bdsharebuttonbox">
+    <a href="#" class="bds_more" data-cmd="more">分享到：</a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间">QQ空间</a>
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博">新浪微博</a>
+    <a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博">腾讯微博</a>
+    <a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网">人人网</a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信">微信</a>
+</div>
+<script>
+window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{"bdSize":16}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+<style>
+    .bdshare_popup_box {
+        border-radius: 4px;
+        border: #e1e1e1 solid 1px;
+    }
+    .bdshare-button-style0-16 a,
+    .bdshare-button-style0-16 .bds_more {
+        padding-left: 20px;
+        margin: 6px 10px 6px 0;
+    }
+    .bdshare_dialog_list a,
+    .bdshare_popup_list a,
+    .bdshare_popup_bottom a {
+        font-family: 'Microsoft Yahei';
+    }
+    .bdshare_popup_top {
+        display: none;
+    }
+    .bdshare_popup_bottom {
+        height: auto;
+        padding: 5px;
+    }
+</style>
+
+
+</div>
+
+            
+    
+
+        </footer>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2017/10/09/Chrome-跨域设置/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Newer</strong>
+            <div class="article-nav-title">
+                
+                    Chrome 跨域设置
+                
+            </div>
+        </a>
+    
+    
+        <a href="/2017/08/15/徐松/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Older</strong>
+            <div class="article-nav-title">徐松</div>
+        </a>
+    
+</nav>
+
+
+    
+</article>
+
+
+    
+    
+        <section id="comments">
+    <div id="valine-thread"></div>
+</section>
+    
+
+</section>
+            
+                
+<aside id="sidebar">
+   
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">recent</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/01/29/TypeScript-泛型/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://www.tslang.cn/assets/images/foreground_bluprint.svg)" alt="TypeScript 泛型" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/TypeScript/">TypeScript</a></p>
+                            <p class="item-title"><a href="/2019/01/29/TypeScript-泛型/" class="title">TypeScript 泛型</a></p>
+                            <p class="item-date"><time datetime="2019-01-29T03:07:22.000Z" itemprop="datePublished">2019-01-29</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/01/24/TypeScript-其他/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://www.tslang.cn/assets/images/foreground_bluprint.svg)" alt="TypeScript 其他" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/TypeScript/">TypeScript</a></p>
+                            <p class="item-title"><a href="/2019/01/24/TypeScript-其他/" class="title">TypeScript 其他</a></p>
+                            <p class="item-date"><time datetime="2019-01-24T07:15:53.000Z" itemprop="datePublished">2019-01-24</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/01/23/TypeScript-函数/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://www.tslang.cn/assets/images/foreground_bluprint.svg)" alt="TypeScript 函数" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/TypeScript/">TypeScript</a></p>
+                            <p class="item-title"><a href="/2019/01/23/TypeScript-函数/" class="title">TypeScript 函数</a></p>
+                            <p class="item-date"><time datetime="2019-01-23T08:14:16.000Z" itemprop="datePublished">2019-01-23</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/01/22/TypeScript-类/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://www.tslang.cn/assets/images/foreground_bluprint.svg)" alt="TypeScript 类" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/TypeScript/">TypeScript</a></p>
+                            <p class="item-title"><a href="/2019/01/22/TypeScript-类/" class="title">TypeScript 类</a></p>
+                            <p class="item-date"><time datetime="2019-01-22T02:27:59.000Z" itemprop="datePublished">2019-01-22</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/01/21/TypeScript-接口/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://www.tslang.cn/assets/images/foreground_bluprint.svg)" alt="TypeScript 接口" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/TypeScript/">TypeScript</a></p>
+                            <p class="item-title"><a href="/2019/01/21/TypeScript-接口/" class="title">TypeScript 接口</a></p>
+                            <p class="item-date"><time datetime="2019-01-21T08:47:26.000Z" itemprop="datePublished">2019-01-21</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/TypeScript/">TypeScript</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/照片/">照片</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/笔记/">笔记</a><span class="category-list-count">9</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a><span class="archive-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">tags</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TypeScript/">TypeScript</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html5-css3/">html5+css3</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/照片/">照片</a><span class="tag-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/TypeScript/" style="font-size: 20px;">TypeScript</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/html5-css3/" style="font-size: 15px;">html5+css3</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/照片/" style="font-size: 10px;">照片</a>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://fex.baidu.com/" target="_blank">Baidu FEX</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://www.alloyteam.com/" target="_blank">Tencent AlloyTeam</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://tgideas.qq.com/" target="_blank">Tencent TGideas</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://isux.tencent.com/" target="_blank">Tencent ISUX</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://eux.baidu.com/" target="_blank">Baidu EUX</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://taobaofed.org/" target="_blank">Taobao FED</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://75team.com/" target="_blank">Qihu 360</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://jdc.jd.com/" target="_blank">JD JDC</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+
+            
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy;2015 - 2022 Shaw<br>
+            Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>
+            Hosted by <a href="https://gitee.com/" target="_blank">Gitee Pages</a>
+            <script src="https://s22.cnzz.com/z_stat.php?id=1271323883&web_id=1271323883" language="JavaScript"></script>
+        </div>        
+    </div>
+</footer>
+        
+    
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//cdn.jsdelivr.net/gh/xcss/valine@v1.1.6/dist/Valine.min.js"></script>
+    <script>
+        new Valine({
+            el: '#valine-thread' ,
+            notify:true,
+            verify:true,
+            app_id: 'Szt8HMQAazvdou8iklHizKPs-gzGzoHsz',
+            app_key: 'PApmoSWTjg2awSf0Fv7VKEeR',
+            placeholder: 'Just Do It'
+        });
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    
+    <title>TypeScript 其他 | Shaw Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="ts,typescript,TypeScript,前端博客,JavaScript,html5,css3,ES6,NodeJs,shaw blog">
+        
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta name="description" content="当使用第三方库时，我们需要引用它的声明文件，才能获得对应的代码补全、接口提示等功能">
+<meta name="keywords" content="ts,typescript,TypeScript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="TypeScript 其他">
+<meta property="og:url" content="http://nicebp.com/2019/01/24/TypeScript-其他/index.html">
+<meta property="og:site_name" content="Shaw Blog">
+<meta property="og:description" content="当使用第三方库时，我们需要引用它的声明文件，才能获得对应的代码补全、接口提示等功能">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://www.tslang.cn/assets/images/foreground_bluprint.svg">
+<meta property="og:updated_time" content="2022-01-12T07:29:47.983Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="TypeScript 其他">
+<meta name="twitter:description" content="当使用第三方库时，我们需要引用它的声明文件，才能获得对应的代码补全、接口提示等功能">
+<meta name="twitter:image" content="https://www.tslang.cn/assets/images/foreground_bluprint.svg">
+    
+
+    
+        <link rel="alternate" href="/" title="Shaw Blog" type="application/atom+xml">
+    
+
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/open-sans/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <!-- <link rel="stylesheet" href="/css/style.css"> -->
+    <link rel="stylesheet" href="/css/style_dark.css">
+
+    <script src="/libs/jquery/2.1.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+    
+
+
+</head>
+</html>
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                
+                <span class="site-title">Shaw Blog</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/.">Home</a>
+                
+                    <a class="main-nav-link" href="/archives">Archives</a>
+                
+                    <a class="main-nav-link" href="/categories">Categories</a>
+                
+                    <a class="main-nav-link" href="/tags">Tags</a>
+                
+                    <a class="main-nav-link" href="/about">About</a>
+                
+            </nav>
+            
+                
+                <nav id="sub-nav">
+                    <div class="profile" id="profile-nav">
+                        <a id="profile-anchor" href="javascript:;">
+                            <img class="avatar" src="/css/images/avatar.png" />
+                            <i class="fa fa-caret-down"></i>
+                        </a>
+                    </div>
+                </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/.">Home</a></td>
+                
+                    <td><a class="main-nav-link" href="/archives">Archives</a></td>
+                
+                    <td><a class="main-nav-link" href="/categories">Categories</a></td>
+                
+                    <td><a class="main-nav-link" href="/tags">Tags</a></td>
+                
+                    <td><a class="main-nav-link" href="/about">About</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+                
+
+<aside id="profile">
+    <div class="inner profile-inner">
+        <div class="base-info profile-block">
+            <img id="avatar" src="/css/images/avatar.png" />
+            <h2 id="name">ShawYo</h2>
+            <h3 id="title">Web Developer &amp; Designer</h3>
+            <span id="location"><i class="fa fa-map-marker"></i>HangZhou, China</span>
+            <a id="follow" target="_blank" href="https://github.com/shawyo/">FOLLOW</a>
+        </div>
+        <div class="article-info profile-block">
+            <div class="article-info-block">
+                18
+                <span>posts</span>
+            </div>
+            <div class="article-info-block">
+                6
+                <span>tags</span>
+            </div>
+        </div>
+        <!-- 
+        <div class="profile-block social-links">
+            <table>
+                <tr>
+                    
+                    
+                    <td>
+                        <a href="https://github.com/shawyo/" target="_blank" title="github" class=tooltip>
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="/" target="_blank" title="twitter" class=tooltip>
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="/" target="_blank" title="facebook" class=tooltip>
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="/" target="_blank" title="dribbble" class=tooltip>
+                            <i class="fa fa-dribbble"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="/" target="_blank" title="rss" class=tooltip>
+                            <i class="fa fa-rss"></i>
+                        </a>
+                    </td>
+                    
+                </tr>
+            </table>
+        </div>
+         -->
+    </div>
+</aside>
+
+            
+            <section id="main"><article id="post-TypeScript-其他" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            
+	
+		<img src="https://www.tslang.cn/assets/images/foreground_bluprint.svg" class="article-banner" />
+	
+
+
+
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+            TypeScript 其他
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2019/01/24/TypeScript-其他/">
+            <time datetime="2019-01-24T07:15:53.000Z" itemprop="datePublished">2019-01-24</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/TypeScript/">TypeScript</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/TypeScript/">TypeScript</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <p>当使用第三方库时，我们需要引用它的声明文件，才能获得对应的代码补全、接口提示等功能</p>
+<a id="more"></a>
+<h2 id="声明文件-declare-var"><a href="#声明文件-declare-var" class="headerlink" title="声明文件 declare var"></a>声明文件 <code>declare var</code></h2><hr>
+<p>什么是声明语句</p>
+<p>假如我们想使用第三方库 jQuery，一种常见的方式是在 html 中通过 <code>&lt;script&gt;</code>  标签引入 jQuery，然后就可以使用全局变量 <code>$</code>或 <code>jQuery</code> 了。</p>
+<p>但是在 ts 中，编译器并不知道 $ 或 jQuery 是什么东西</p>
+<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> *当使用第三方库时，我们需要引用它的声明文件，才能获得对应的代码补全、接口提示等功能。</span></span><br><span class="line"><span class="comment"> *声明语句: 如果需要ts对新的语法进行检查, 需要要加载了对应的类型说明代码</span></span><br><span class="line"><span class="comment"> *declare var jQuery: (selector: string) =&gt; any;</span></span><br><span class="line"><span class="comment"> *声明文件: 把声明语句放到一个单独的文件（jQuery.d.ts）中, ts会自动解析到项目中所有声明文件</span></span><br><span class="line"><span class="comment"> *下载声明文件: npm install @types/jquery --save-dev</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line">jQuery(<span class="string">"#foo"</span>);</span><br><span class="line"><span class="comment">// ERROR: Cannot find name 'jQuery'.</span></span><br></pre></td></tr></table></figure>
+<p>这时，我们需要使用 declare var 来定义它的类型</p>
+<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="keyword">declare</span> <span class="keyword">var</span> JQuery: <span class="function">(<span class="params">selector: <span class="built_in">string</span></span>) =&gt;</span> <span class="built_in">any</span>;</span><br><span class="line"></span><br><span class="line">jQuery(<span class="string">"#foo"</span>);</span><br></pre></td></tr></table></figure>
+<p><code>declare var</code> 并没有真的定义一个变量，只是定义了全局变量 jQuery 的类型，仅仅会用于编译时的检查，在编译结果中会被删除。它编译结果是：</p>
+<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line">jQuery(<span class="string">"#foo"</span>);</span><br></pre></td></tr></table></figure>
+<p>一般声明文件都会单独写成一个 <code>xxx.d.ts</code> 文件<br>创建 01_jQuery.d.ts, 将声明语句定义其中, TS 编译器会扫描并加载项目中所有的 TS 声明文件</p>
+<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="keyword">declare</span> <span class="keyword">var</span> JQuery: <span class="function">(<span class="params">selector: <span class="built_in">string</span></span>) =&gt;</span> <span class="built_in">any</span>;</span><br></pre></td></tr></table></figure>
+<p>很多的第三方库都定义了对应的声明文件库, 库文件名一般为 <code>@types/xxx</code>, 可以在 <code>https://www.npmjs.com/package/package</code> 进行搜索<br>有的第三库在下载时就会自动下载对应的声明文件库(比如: webpack),有的可能需要单独下载(比如 jQuery/react)</p>
+<h2 id="内置对象"><a href="#内置对象" class="headerlink" title="内置对象"></a>内置对象</h2><hr>
+<p>JavaScript 中有很多内置对象，它们可以直接在 TypeScript 中当做定义好了的类型。</p>
+<p>内置对象是指根据标准在全局作用域（Global）上存在的对象。这里的标准是指 ECMAScript 和其他环境（比如 DOM）的标准。</p>
+<ul>
+<li>ECMAScript 的内置对象<blockquote>
+<p>Boolean<br>Number<br>String<br>Date<br>RegExp<br>Error</p>
+</blockquote>
+</li>
+</ul>
+<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* 1. ECMAScript 的内置对象 */</span></span><br><span class="line"><span class="keyword">let</span> b: <span class="built_in">Boolean</span> = <span class="keyword">new</span> <span class="built_in">Boolean</span>(<span class="number">1</span>);</span><br><span class="line"><span class="keyword">let</span> n: <span class="built_in">Number</span> = <span class="keyword">new</span> <span class="built_in">Number</span>(<span class="literal">true</span>);</span><br><span class="line"><span class="keyword">let</span> s: <span class="built_in">String</span> = <span class="keyword">new</span> <span class="built_in">String</span>(<span class="string">"abc"</span>);</span><br><span class="line"><span class="keyword">let</span> d: <span class="built_in">Date</span> = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line"><span class="keyword">let</span> r: <span class="built_in">RegExp</span> = <span class="regexp">/^1/</span>;</span><br><span class="line"><span class="keyword">let</span> e: <span class="built_in">Error</span> = <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">"error message"</span>);</span><br><span class="line">b = <span class="literal">true</span>;</span><br><span class="line"><span class="comment">// let bb: boolean = new Boolean(2)  // error</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>BOM 和 DOM 的内置对象<blockquote>
+<p>Window<br>Document<br>HTMLElement<br>DocumentFragment<br>Event<br>NodeList</p>
+</blockquote>
+</li>
+</ul>
+<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> div: HTMLElement = <span class="built_in">document</span>.getElementById(<span class="string">"test"</span>);</span><br><span class="line"><span class="keyword">const</span> divs: NodeList = <span class="built_in">document</span>.querySelectorAll(<span class="string">"div"</span>);</span><br><span class="line"><span class="built_in">document</span>.addEventListener(<span class="string">"click"</span>, <span class="function">(<span class="params">event: MouseEvent</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.dir(event.target);</span><br><span class="line">&#125;);</span><br><span class="line"><span class="keyword">const</span> fragment: DocumentFragment = <span class="built_in">document</span>.createDocumentFragment();</span><br></pre></td></tr></table></figure>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+    <div class="bdsharebuttonbox">
+    <a href="#" class="bds_more" data-cmd="more">分享到：</a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间">QQ空间</a>
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博">新浪微博</a>
+    <a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博">腾讯微博</a>
+    <a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网">人人网</a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信">微信</a>
+</div>
+<script>
+window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{"bdSize":16}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+<style>
+    .bdshare_popup_box {
+        border-radius: 4px;
+        border: #e1e1e1 solid 1px;
+    }
+    .bdshare-button-style0-16 a,
+    .bdshare-button-style0-16 .bds_more {
+        padding-left: 20px;
+        margin: 6px 10px 6px 0;
+    }
+    .bdshare_dialog_list a,
+    .bdshare_popup_list a,
+    .bdshare_popup_bottom a {
+        font-family: 'Microsoft Yahei';
+    }
+    .bdshare_popup_top {
+        display: none;
+    }
+    .bdshare_popup_bottom {
+        height: auto;
+        padding: 5px;
+    }
+</style>
+
+
+</div>
+
+            
+    
+
+        </footer>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2019/01/29/TypeScript-泛型/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Newer</strong>
+            <div class="article-nav-title">
+                
+                    TypeScript 泛型
+                
+            </div>
+        </a>
+    
+    
+        <a href="/2019/01/23/TypeScript-函数/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Older</strong>
+            <div class="article-nav-title">TypeScript 函数</div>
+        </a>
+    
+</nav>
+
+
+    
+</article>
+
+
+    
+    
+        <section id="comments">
+    <div id="valine-thread"></div>
+</section>
+    
+
+</section>
+            
+                
+<aside id="sidebar">
+   
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">recent</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/01/29/TypeScript-泛型/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://www.tslang.cn/assets/images/foreground_bluprint.svg)" alt="TypeScript 泛型" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/TypeScript/">TypeScript</a></p>
+                            <p class="item-title"><a href="/2019/01/29/TypeScript-泛型/" class="title">TypeScript 泛型</a></p>
+                            <p class="item-date"><time datetime="2019-01-29T03:07:22.000Z" itemprop="datePublished">2019-01-29</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/01/24/TypeScript-其他/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://www.tslang.cn/assets/images/foreground_bluprint.svg)" alt="TypeScript 其他" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/TypeScript/">TypeScript</a></p>
+                            <p class="item-title"><a href="/2019/01/24/TypeScript-其他/" class="title">TypeScript 其他</a></p>
+                            <p class="item-date"><time datetime="2019-01-24T07:15:53.000Z" itemprop="datePublished">2019-01-24</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/01/23/TypeScript-函数/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://www.tslang.cn/assets/images/foreground_bluprint.svg)" alt="TypeScript 函数" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/TypeScript/">TypeScript</a></p>
+                            <p class="item-title"><a href="/2019/01/23/TypeScript-函数/" class="title">TypeScript 函数</a></p>
+                            <p class="item-date"><time datetime="2019-01-23T08:14:16.000Z" itemprop="datePublished">2019-01-23</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/01/22/TypeScript-类/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://www.tslang.cn/assets/images/foreground_bluprint.svg)" alt="TypeScript 类" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/TypeScript/">TypeScript</a></p>
+                            <p class="item-title"><a href="/2019/01/22/TypeScript-类/" class="title">TypeScript 类</a></p>
+                            <p class="item-date"><time datetime="2019-01-22T02:27:59.000Z" itemprop="datePublished">2019-01-22</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/01/21/TypeScript-接口/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://www.tslang.cn/assets/images/foreground_bluprint.svg)" alt="TypeScript 接口" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/TypeScript/">TypeScript</a></p>
+                            <p class="item-title"><a href="/2019/01/21/TypeScript-接口/" class="title">TypeScript 接口</a></p>
+                            <p class="item-date"><time datetime="2019-01-21T08:47:26.000Z" itemprop="datePublished">2019-01-21</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/TypeScript/">TypeScript</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/照片/">照片</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/笔记/">笔记</a><span class="category-list-count">9</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a><span class="archive-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">tags</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TypeScript/">TypeScript</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html5-css3/">html5+css3</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/照片/">照片</a><span class="tag-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/TypeScript/" style="font-size: 20px;">TypeScript</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/html5-css3/" style="font-size: 15px;">html5+css3</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/照片/" style="font-size: 10px;">照片</a>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://fex.baidu.com/" target="_blank">Baidu FEX</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://www.alloyteam.com/" target="_blank">Tencent AlloyTeam</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://tgideas.qq.com/" target="_blank">Tencent TGideas</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://isux.tencent.com/" target="_blank">Tencent ISUX</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://eux.baidu.com/" target="_blank">Baidu EUX</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://taobaofed.org/" target="_blank">Taobao FED</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://75team.com/" target="_blank">Qihu 360</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://jdc.jd.com/" target="_blank">JD JDC</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+
+            
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy;2015 - 2022 Shaw<br>
+            Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>
+            Hosted by <a href="https://gitee.com/" target="_blank">Gitee Pages</a>
+            <script src="https://s22.cnzz.com/z_stat.php?id=1271323883&web_id=1271323883" language="JavaScript"></script>
+        </div>        
+    </div>
+</footer>
+        
+    
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//cdn.jsdelivr.net/gh/xcss/valine@v1.1.6/dist/Valine.min.js"></script>
+    <script>
+        new Valine({
+            el: '#valine-thread' ,
+            notify:true,
+            verify:true,
+            app_id: 'Szt8HMQAazvdou8iklHizKPs-gzGzoHsz',
+            app_key: 'PApmoSWTjg2awSf0Fv7VKEeR',
+            placeholder: 'Just Do It'
+        });
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>
